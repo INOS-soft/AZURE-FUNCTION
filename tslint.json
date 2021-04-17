@@ -1,34 +1,18 @@
 {
-  "extends": [
-    "tslint:recommended",
-    "tslint-config-prettier"
-  ],
+  "extends": ["tslint-config-prettier"],
+  "rulesDirectory": ["tslint-rules/", "node_modules/tslint-microsoft-contrib/"],
   "rules": {
-    "no-console": [
+    "promise-must-complete": true,
+    "react-no-unbound-dispatcher-props": true,
+    "react-proper-lifecycle-methods": true,
+    "react-readonly-props-and-state": true,
+    "react-unused-props-and-state": [
       true,
-      "log",
-      "error"
+      {
+        "props-interface-regex": "Props$",
+        "state-interface-regex": "State$"
+      }
     ],
-    "semicolon": [
-      true,
-      "always"
-    ],
-    "array-type": [
-      true,
-      "generic"
-    ],
-    "no-string-literal": false,
-    "quotemark": [
-      true,
-      "single"
-    ],
-    "object-literal-shorthand": [
-      true,
-      "never"
-    ],
-    "interface-name": false,
-    "max-classes-per-file": false,
-    "ban-types": false,
-    "no-var-requires": false
+    "react-this-binding-issue": true
   }
 }

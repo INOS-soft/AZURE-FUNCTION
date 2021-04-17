@@ -1,99 +1,37 @@
-# Contributing Guidelines
+# Contributing Guide
 
-There are two main ways to contribute to the project &mdash; submitting issues and submitting 
-fixes/changes/improvements via pull requests.
+1. Make sure you put things in the right category!
+2. Always add your items to the end of a list. To be fair, the order is first-come-first-serve.
+3. If you think something belongs in the wrong category, or think there needs to be a new category, feel free to edit things too.
 
-## Submitting issues
 
-Both bug reports and feature requests are welcome.
-Submit issues [here](https://github.com/Kotlin/kotlinx.serialization/issues).
 
-* Search for existing issues to avoid reporting duplicates.
-* When submitting a bug report:
-  * Use a 'bug report' template when creating a new issue.
-  * Test it against the most recently released version. It might have been already fixed.
-  * By default, we assume that your problem reproduces in Kotlin/JVM. Please, mention if the problem is
-    specific to Kotlin/JS or Kotlin/Native. 
-  * Include the code that reproduces the problem. Provide the complete reproducer code, yet minimize it as much as possible.
-  * However, don't put off reporting any weird or rarely appearing issues just because you cannot consistently 
-    reproduce them.
-  * If the bug is in behavior, then explain what behavior you've expected and what you've got.  
-* When submitting a feature request:
-  * Use a 'feature request' template when creating a new issue.
-  * Explain why you need the feature &mdash; what's your use-case, what's your domain.
-  * Explaining the problem you face is more important than suggesting a solution. 
-    Report your problem even if you don't have any proposed solution.
-  * If there is an alternative way to do what you need, then show the code of the alternative.
+### Projects using Vuejs
 
-## Submitting PRs
+Make sure you put things in the right category. There are two main categories:
+- Open Source
+- Apps/Websites
 
-We love PRs. Submit PRs [here](https://github.com/Kotlin/kotlinx.serialization/pulls).
-However, please keep in mind that maintainers will have to support the resulting code of the project,
-so do familiarize yourself with the following guidelines. 
+#### Open source
 
-* All development (both new features and bug fixes) is performed in the `dev` branch.
-  * The `master` branch always contains sources of the most recently released version.
-  * Base PRs against the `dev` branch.
-  * The `dev` branch is pushed to the `master` branch during release.
-  * Documentation in markdown files can be updated directly in the `master` branch, 
-    unless the documentation is in the source code, and the patch changes line numbers.
-* If you fix documentation:
-  * After fixing/changing code examples in the [`docs`](docs) folder or updating any references in the markdown files
-    run the [Knit tool](#running-the-knit-tool) and commit the resulting changes as well. 
-    It will not pass the tests otherwise.
-  * If you plan extensive rewrites/additions to the docs, then please [contact the maintainers](#contacting-maintainers)
-    to coordinate the work in advance.    
-* If you make any code changes:
-  * Follow the [Kotlin Coding Conventions](https://kotlinlang.org/docs/reference/coding-conventions.html). 
-    * Use 4 spaces for indentation. 
-    * Use imports with '*'.
-  * [Build the project](#building) to make sure it all works and passes the tests.
-* If you fix a bug:
-  * Write the test the reproduces the bug.
-  * Fixes without tests are accepted only in exceptional circumstances if it can be shown that writing the 
-    corresponding test is too hard or otherwise impractical.
-  * Follow the style of writing tests that is used in this project: 
-    name test functions as `testXxx`. Don't use backticks in test names.
-* If you introduce any new public APIs:
-  * All new APIs must come with documentation and tests.
-  * All new APIs are initially released with `@ExperimentalSerializationApi` annotation and are graduated later.
-  * [Update the public API dumps](#updating-the-public-api-dump) and commit the resulting changes as well. 
-    It will not pass the tests otherwise.
-  * If you plan large API additions, then please start by submitting an issue with the proposed API design  
-    to gather community feedback.
-  * [Contact the maintainers](#contacting-maintainers) to coordinate any big piece of work in advance.
-* If you propose/implement a new serialization format:
-  * Follow the general advice on new public APIs above.
-  * Note, that you can keep new format implementation in your own repository to be able to perform proper maintenance 
-    and to have a separate release cycle. 
-  * You can submit a PR to the [list of community-supported formats](formats/README.md#other-community-supported-formats) 
-    with a description of your library.
-* Comment on the existing issue if you want to work on it. Ensure that the issue not only describes a problem,
-  but also describes a solution that had received a positive feedback. Propose a solution if there isn't any.
+Open Source section gives the possibility for developers to contribute and be a part of an opensource project using their knowledge of the vuejs.
+You should put your project in this category if the following conditions are true:
+- The description for the link should not contain links to the author and third-party resources - this should be in the documentation (README)
+- The documentation (README) contains a description of the project, illustration of the project with a demo or screenshots and a CONTRIBUTING section.
+- The documentation is in English.
+- The project is active and maintained.
+- The project accepts contributions.
+- Not a commercial product.
 
-## Building
+The link provided should be the link of the github repository, not the demo.
+If you consider your project finished, and it does not need any contributions, consider the apps/website category.
 
-You can find all the instructions [here](docs/building.md)
+#### Apps/Websites
 
-### Running the Knit tool
-
-* Use [Knit](https://github.com/Kotlin/kotlinx-knit/blob/master/README.md) for updates to documentation:
-  * Run `./gradlew knit` to update example files, links, tables of content.
-  * Commit updated documents and examples together with other changes.
-
-### Updating the public API dump
-
-* Use [Binary Compatibility Validator](https://github.com/Kotlin/binary-compatibility-validator/blob/master/README.md) for updates to public API:
-  * Run `./gradlew apiDump` to update API index files. 
-  * Commit updated API indexes together with other changes.
-
-## Releases
-
-* Full release procedure checklist is [here](RELEASING.md).
-
-## Contacting maintainers
-
-* If something cannot be done, not convenient, or does not work &mdash; submit an [issue](#submitting-issues).
-* "How to do something" questions &mdash; [StackOverflow](https://stackoverflow.com).
-* Discussions and general inquiries &mdash; use `#serialization` channel in [KotlinLang Slack](https://kotl.in/slack).
-
+Apps/Websites gives the opportunity to showcase the awesome things we can build with vuejs.
+You should put your app/website in this category if the following conditions are true:
+- The website is available without errors or ssl certificate problems, and load in a reasonable amount of time.
+- The website is using vuejs intensively. It should detect vue with [vue-devtools](https://github.com/vuejs/vue-devtools).
+- If you cannot detect vue with `vue-devtools` due to work at non public pages (e.g. for enterprise website), you can send Pull Request with screenshot that detected it.
+- The website is original and not too simple. For that reason, blogs and simple landing pages are rejected.
+- A commercial product using Vue, provided that guests could reasonably check out how Vue was used (i.e. A headless CMS which uses Vue for the Admin/editor Area and offers a free tier).

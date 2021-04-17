@@ -1,99 +1,241 @@
-# Contributing Guidelines
+# Contributing to Selenium
 
-There are two main ways to contribute to the project &mdash; submitting issues and submitting 
-fixes/changes/improvements via pull requests.
+The Selenium project welcomes contributions from everyone. There are a
+number of ways you can help:
 
-## Submitting issues
+## Bug Reports
 
-Both bug reports and feature requests are welcome.
-Submit issues [here](https://github.com/Kotlin/kotlinx.serialization/issues).
+When opening new issues or commenting on existing issues please make
+sure discussions are related to concrete technical issues with the
+Selenium software.
 
-* Search for existing issues to avoid reporting duplicates.
-* When submitting a bug report:
-  * Use a 'bug report' template when creating a new issue.
-  * Test it against the most recently released version. It might have been already fixed.
-  * By default, we assume that your problem reproduces in Kotlin/JVM. Please, mention if the problem is
-    specific to Kotlin/JS or Kotlin/Native. 
-  * Include the code that reproduces the problem. Provide the complete reproducer code, yet minimize it as much as possible.
-  * However, don't put off reporting any weird or rarely appearing issues just because you cannot consistently 
-    reproduce them.
-  * If the bug is in behavior, then explain what behavior you've expected and what you've got.  
-* When submitting a feature request:
-  * Use a 'feature request' template when creating a new issue.
-  * Explain why you need the feature &mdash; what's your use-case, what's your domain.
-  * Explaining the problem you face is more important than suggesting a solution. 
-    Report your problem even if you don't have any proposed solution.
-  * If there is an alternative way to do what you need, then show the code of the alternative.
+It's imperative that issue reports outline the steps to reproduce
+the defect. If the issue can't be reproduced it will be closed.
+Please provide [concise reproducible test cases](http://sscce.org/)
+and describe what results you are seeing and what results you expect.
 
-## Submitting PRs
+Issues shouldn't be used for support. Please address questions to the
+[`selenium-users@` mailing list](https://groups.google.com/forum/#!forum/selenium-users).
+Discussion of high level project ideas or non-technical topics should
+move to the
+[`selenium-developers@` mailing list](https://groups.google.com/forum/#!forum/selenium-developers)
+instead.
 
-We love PRs. Submit PRs [here](https://github.com/Kotlin/kotlinx.serialization/pulls).
-However, please keep in mind that maintainers will have to support the resulting code of the project,
-so do familiarize yourself with the following guidelines. 
+We also need help with triaging
+[issues that needs investigation](https://github.com/SeleniumHQ/selenium/labels/I-needs%20investigation).
+This means asking the right questions, procuring the right information
+to properly debug and verify the issue, and bisecting a commit range if
+the issue is a regression.
 
-* All development (both new features and bug fixes) is performed in the `dev` branch.
-  * The `master` branch always contains sources of the most recently released version.
-  * Base PRs against the `dev` branch.
-  * The `dev` branch is pushed to the `master` branch during release.
-  * Documentation in markdown files can be updated directly in the `master` branch, 
-    unless the documentation is in the source code, and the patch changes line numbers.
-* If you fix documentation:
-  * After fixing/changing code examples in the [`docs`](docs) folder or updating any references in the markdown files
-    run the [Knit tool](#running-the-knit-tool) and commit the resulting changes as well. 
-    It will not pass the tests otherwise.
-  * If you plan extensive rewrites/additions to the docs, then please [contact the maintainers](#contacting-maintainers)
-    to coordinate the work in advance.    
-* If you make any code changes:
-  * Follow the [Kotlin Coding Conventions](https://kotlinlang.org/docs/reference/coding-conventions.html). 
-    * Use 4 spaces for indentation. 
-    * Use imports with '*'.
-  * [Build the project](#building) to make sure it all works and passes the tests.
-* If you fix a bug:
-  * Write the test the reproduces the bug.
-  * Fixes without tests are accepted only in exceptional circumstances if it can be shown that writing the 
-    corresponding test is too hard or otherwise impractical.
-  * Follow the style of writing tests that is used in this project: 
-    name test functions as `testXxx`. Don't use backticks in test names.
-* If you introduce any new public APIs:
-  * All new APIs must come with documentation and tests.
-  * All new APIs are initially released with `@ExperimentalSerializationApi` annotation and are graduated later.
-  * [Update the public API dumps](#updating-the-public-api-dump) and commit the resulting changes as well. 
-    It will not pass the tests otherwise.
-  * If you plan large API additions, then please start by submitting an issue with the proposed API design  
-    to gather community feedback.
-  * [Contact the maintainers](#contacting-maintainers) to coordinate any big piece of work in advance.
-* If you propose/implement a new serialization format:
-  * Follow the general advice on new public APIs above.
-  * Note, that you can keep new format implementation in your own repository to be able to perform proper maintenance 
-    and to have a separate release cycle. 
-  * You can submit a PR to the [list of community-supported formats](formats/README.md#other-community-supported-formats) 
-    with a description of your library.
-* Comment on the existing issue if you want to work on it. Ensure that the issue not only describes a problem,
-  but also describes a solution that had received a positive feedback. Propose a solution if there isn't any.
+## Feature Requests
 
-## Building
+If you find that Selenium is missing something, feel free to open an issue
+with details describing what feature(s) you'd like added or changed.  
 
-You can find all the instructions [here](docs/building.md)
+If you'd like a hand at trying to implement the feature yourself, please refer to the [Code Contributions](#code-contributions) section of the document.
 
-### Running the Knit tool
 
-* Use [Knit](https://github.com/Kotlin/kotlinx-knit/blob/master/README.md) for updates to documentation:
-  * Run `./gradlew knit` to update example files, links, tables of content.
-  * Commit updated documents and examples together with other changes.
+## Documentation
 
-### Updating the public API dump
+Selenium is a big software project and documentation is key to
+understanding how things work and learning effective ways to exploit
+its potential.
 
-* Use [Binary Compatibility Validator](https://github.com/Kotlin/binary-compatibility-validator/blob/master/README.md) for updates to public API:
-  * Run `./gradlew apiDump` to update API index files. 
-  * Commit updated API indexes together with other changes.
+The [seleniumhq.github.io](https://github.com/SeleniumHQ/seleniumhq.github.io/)
+repository contains both Selenium’s site and documentation. This is an ongoing
+effort (not targeted at any specific release) to provide updated information on
+how to use Selenium effectively, how to get involved and how to contribute to Selenium.
 
-## Releases
+The official documentation of Selenium is at https://selenium.dev/documentation/.
+More details on how to get involved and contribute, please check the site's
+and documentation [contributing guidelines](https://selenium.dev/documentation/en/contributing/).
 
-* Full release procedure checklist is [here](RELEASING.md).
+## Code Contributions
 
-## Contacting maintainers
+The Selenium project welcomes new contributors. Individuals making
+significant and valuable contributions over time are made _Committers_
+and given commit-access to the project.
 
-* If something cannot be done, not convenient, or does not work &mdash; submit an [issue](#submitting-issues).
-* "How to do something" questions &mdash; [StackOverflow](https://stackoverflow.com).
-* Discussions and general inquiries &mdash; use `#serialization` channel in [KotlinLang Slack](https://kotl.in/slack).
+If you're looking for easy bugs, have a look at
+[issues labelled E-easy](https://github.com/SeleniumHQ/selenium/issues?q=is%3Aopen+is%3Aissue+label%3AE-easy)
+on Github.
 
+This document will guide you through the contribution process.
+
+### Step 1: Fork
+
+Fork the project [on Github](https://github.com/seleniumhq/selenium)
+and check out your copy locally.
+
+```shell
+% git clone git@github.com:username/selenium.git
+% cd selenium
+% git remote add upstream git://github.com/seleniumhq/selenium.git
+```
+
+#### Dependencies
+
+We bundle dependencies in the _third-party/_ directory that is not
+part of the proper project. Any changes to files in this directory or
+its subdirectories should be sent upstream to the respective projects.
+Please don't send your patch to us as we cannot accept it.
+
+We do accept help in upgrading our existing dependencies or removing
+superfluous dependencies. If you need to add a new dependency it's
+often a good idea to reach out to the committers on the
+[IRC channel or the mailing list](https://github.com/SeleniumHQ/selenium/blob/trunk/CONTRIBUTING.md#communication)
+to check that your approach aligns with the project's
+ideas. Nothing is more frustrating than seeing your hard work go to
+waste because your vision doesn't align with the project's.
+
+#### License Headers
+
+Every file in the Selenium project must carry the following license
+header boilerplate:
+
+```text
+Licensed to the Software Freedom Conservancy (SFC) under one
+or more contributor license agreements.  See the NOTICE file
+distributed with this work for additional information
+regarding copyright ownership.  The SFC licenses this file
+to you under the Apache License, Version 2.0 (the
+"License"); you may not use this file except in compliance
+with the License.  You may obtain a copy of the License at
+
+  http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing,
+software distributed under the License is distributed on an
+"AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+KIND, either express or implied.  See the License for the
+specific language governing permissions and limitations
+under the License.
+```
+
+There's no need to include a copyright statement in the file's header.
+The copyright attributions can be reviewed in the
+[NOTICE](https://github.com/SeleniumHQ/selenium/blob/trunk/NOTICE)
+file found in the top-level directory.
+
+### Step 2: Branch
+
+Create a feature branch and start hacking:
+
+```shell
+% git checkout -b my-feature-branch
+```
+
+We practice HEAD-based development, which means all changes are applied
+directly on top of trunk.
+
+### Step 3: Commit
+
+First make sure git knows your name and email address:
+
+```shell
+% git config --global user.name 'Santa Claus'
+% git config --global user.email 'santa@example.com'
+```
+
+**Writing good commit messages is important.** A commit message
+should describe what changed, why, and reference issues fixed (if
+any). Follow these guidelines when writing one:
+
+1. The first line should be around 50 characters or less and contain a
+    short description of the change.
+2. Keep the second line blank.
+3. Wrap all other lines at 72 columns.
+4. Include `Fixes #N`, where _N_ is the issue number the commit
+    fixes, if any.
+
+A good commit message can look like this:
+
+```text
+explain commit normatively in one line
+
+Body of commit message is a few lines of text, explaining things
+in more detail, possibly giving some background about the issue
+being fixed, etc.
+
+The body of the commit message can be several paragraphs, and
+please do proper word-wrap and keep columns shorter than about
+72 characters or so. That way `git log` will show things
+nicely even when it is indented.
+
+Fixes #141
+```
+
+The first line must be meaningful as it's what people see when they
+run `git shortlog` or `git log --oneline`.
+
+### Step 4: Rebase
+
+Use `git rebase` (not `git merge`) to sync your work from time to time.
+
+```shell
+% git fetch upstream
+% git rebase upstream/trunk
+```
+
+### Step 5: Test
+
+Bug fixes and features **should have tests**. Look at other tests to
+see how they should be structured.
+
+### Step 6: Push
+
+```shell
+% git push origin my-feature-branch
+```
+
+Go to https://github.com/yourusername/selenium.git and press the _Pull
+Request_ and fill out the form. 
+
+Pull requests are usually reviewed within a few days. If there are
+comments to address, apply your changes in new commits (preferably
+[fixups](http://git-scm.com/docs/git-commit)) and push to the same
+branch.
+
+### Step 7: Integration
+
+When code review is complete, a committer will take your PR and
+integrate it on Selenium's trunk branch. Because we like to keep a
+linear history on the trunk branch, we will normally squash and rebase
+your branch history.
+
+## Stages of an Issue or PR
+
+From your create your issue or pull request, through code review and
+towards integration, it will be assigned different Github labels. The
+labels serve for the committers to more easily keep track of work
+that's pending or awaiting action.
+
+Component labels are yellow and carry the **C** prefix. They highlight
+the subsystem or component your PR makes changes in.
+
+The driver labels (**D**) indicate if the changes are related to a
+WebDriver implementation or the Selenium atoms.
+
+The review labels (**R**) are:
+
+* **awaiting answer**: awaits an answer from you
+* **awaiting merge**: waits for a committer to integrate the PR
+* **awaiting reviewer**: pending code review
+* **blocked on external**: a change in an upstream repo is required
+* **needs code changes**: waiting for you to fix a review issue
+* **needs rebase**: the branch isn't in sync with trunk and needs to
+    be rebased
+
+Issues are labelled to make them easier to categorise and find by:
+
+* which **component** they relate to (java, cpp, dotnet, py, rb, nodejs)
+* which **driver** is affected
+* their presumed **difficulty** (easy, less easy, hard)
+* what **type** of issue they are (defect, race condition, cleanup)
+
+## Communication
+
+Selenium contributors frequent the `#selenium` channel on
+[`irc.freenode.org`](https://webchat.freenode.net/). You can also join
+the [`selenium-developers@` mailing list](https://groups.google.com/forum/#!forum/selenium-developers).
+Check https://selenium.dev/support/ for a complete list of options to communicate.

@@ -1,5 +1,5 @@
-**/.*
-**/__tests__
-examples
-CONTRIBUTING.md
-bower.json
+!dist
+.travis.yml
+tsconfig.json
+tslint.json
+test

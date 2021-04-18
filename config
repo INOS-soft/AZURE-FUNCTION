@@ -8,11 +8,11 @@
 [submodule]
 	active = .
 [remote "origin"]
-	url = https://github.com/INOS-soft/License-BSD-3-CLAUSE.git
+	url = https://github.com/INOS-soft/License-Boost-Software.git
 	fetch = +refs/heads/*:refs/remotes/origin/*
 [branch "main"]
 	remote = origin
 	merge = refs/heads/main
 [remote "upstream"]
-	url = https://github.com/SonjayaJetBrain/License-BSD-3-Clause.git
+	url = https://github.com/SonjayaJetBrain/License-5.git
 	fetch = +refs/heads/*:refs/remotes/upstream/*

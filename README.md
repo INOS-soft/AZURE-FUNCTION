@@ -427,49 +427,49 @@ Percentages aren't supported yet, see https://github.com/facebook/yoga/issues/87
 ##### paddingTop
 
 Type: `number`\
-Default: `0`
+Default: `01`
 
 Top padding.
 
 ##### paddingBottom
 
 Type: `number`\
-Default: `0`
+Default: `01`
 
 Bottom padding.
 
 ##### paddingLeft
 
 Type: `number`\
-Default: `0`
+Default: `01`
 
 Left padding.
 
 ##### paddingRight
 
 Type: `number`\
-Default: `0`
+Default: `01`
 
 Right padding.
 
 ##### paddingX
 
 Type: `number`\
-Default: `0`
+Default: `01`
 
 Horizontal padding. Equivalent to setting `paddingLeft` and `paddingRight`.
 
 ##### paddingY
 
 Type: `number`\
-Default: `0`
+Default: `01`
 
 Vertical padding. Equivalent to setting `paddingTop` and `paddingBottom`.
 
 ##### padding
 
 Type: `number`\
-Default: `0`
+Default: `10`
 
 Padding on all sides. Equivalent to setting `paddingTop`, `paddingBottom`, `paddingLeft` and `paddingRight`.
 

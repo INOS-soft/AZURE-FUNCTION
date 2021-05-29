@@ -1,1775 +1,1616 @@
-<h1 align="center">
-	<br>
-	<br>
-	<img width="200" alt="Ink" src="media/logo.png">
-	<br>
-	<br>
-	<br>
-</h1>
 
-> React for CLIs. Build and test your CLI output using components.
+# Awesome Docker [![Awesome](https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)][sindresorhus] [![Netlify Status](https://api.netlify.com/api/v1/badges/8ca86717-11ba-46d4-9d0a-700d8527f13b/deploy-status)](https://app.netlify.com/sites/awesome-docker/deploys)<!-- omit in toc -->
 
-[![Build Status](https://github.com/vadimdemedes/ink/workflows/test/badge.svg)](https://github.com/vadimdemedes/ink/actions)
-[![npm](https://img.shields.io/npm/dm/ink?logo=npm)](https://npmjs.com/package/ink)
+> A curated list of Docker resources and projects
 
-Ink provides the same component-based UI building experience that React offers in the browser, but for command-line apps.
-It uses [Yoga](https://github.com/facebook/yoga) to build Flexbox layouts in the terminal, so most CSS-like props are available in Ink as well.
-If you are already familiar with React, you already know Ink.
+If you would like to contribute, please read [CONTRIBUTING.md][contributing] first.
+It contains a lot of tips and guidelines to help keep things organized.
+Just click [README.md][editreadme] to submit a [pull request][editreadme].
+If this list is not complete, you can [contribute][editreadme] to make it so. Here is a great video tutorial to learn how to [contribute on Github](https://egghead.io/lessons/javascript-identifying-how-to-contribute-to-an-open-source-project-on-github).
 
-Since Ink is a React renderer, it means that all features of React are supported.
-Head over to [React](https://reactjs.org) website for documentation on how to use it.
-Only Ink's methods will be documented in this readme.
+**_You can see the updates on [TWITTER](https://twitter.com/awesome_docker)_**
 
-**Note:** This is documentation for Ink 3. If you're looking for docs on Ink 2, check out [this release](https://github.com/vadimdemedes/ink/tree/v2.7.1). There's also a [migration guide](migrate.md) from Ink 2 available.
+> **Please**, help organize these resources so that they are _easy to find_ and _understand_ for newcomers. See how to **[Contribute][contributing]** for tips!
 
-## Install
+**_If you see a link here that is not (any longer) a good fit, you can fix it by submitting a [pull request][editreadme] to improve this file. Thank you!_**
 
+The creators and maintainers of this list do not receive any form of payment to accept a change made by any contributor. This page is not an official Docker product in any way. It is a list of links to projects and is maintained by volunteers. Everybody is welcome to contribute. The goal of this repo is to index open-source projects, not to advertise for profit.
+
+All the links are monitored and tested with a home baked [Node.js script](https://github.com/veggiemonk/awesome-docker/blob/master/pull_request.js)
+
+# Contents <!-- omit in toc -->
+
+<!-- TOC -->
+
+- [Legend](#legend)
+- [What is Docker](#what-is-docker)
+- [Where to start](#where-to-start)
+- [Where to start (Windows)](#where-to-start-windows)
+- [Projects](#projects)
+  - [Container Operations](#container-operations)
+    - [Container Composition](#container-composition)
+    - [Deployment and Infrastructure](#deployment-and-infrastructure)
+    - [Monitoring](#monitoring)
+    - [Networking](#networking)
+    - [Orchestration](#orchestration)
+    - [PaaS](#paas)
+    - [Reverse Proxy](#reverse-proxy)
+    - [Runtime](#runtime)
+    - [Security](#security)
+    - [Service Discovery](#service-discovery)
+    - [Volume Management / Data](#volume-management--data)
+    - [User Interface](#user-interface)
+      - [Desktop](#desktop)
+      - [Terminal](#terminal)
+      - [Web](#web)
+  - [Docker Images](#docker-images)
+    - [Base Tools](#base-tools)
+    - [Builder](#builder)
+    - [Dockerfile](#dockerfile)
+    - [Linter](#linter)
+    - [Metadata](#metadata)
+    - [Registry](#registry)
+  - [Development with Docker](#development-with-docker)
+    - [API Client](#api-client)
+    - [CI/CD](#cicd)
+    - [Development Environment](#development-environment)
+    - [Garbage Collection](#garbage-collection)
+    - [Serverless](#serverless)
+    - [Testing](#testing)
+    - [Wrappers](#wrappers)
+  - [Services based on Docker (:heavy_dollar_sign:)](#services-based-on-docker-heavy_dollar_sign)
+    - [CI Services](#ci-services)
+    - [CaaS](#caas)
+    - [Monitoring Services](#monitoring-services)
+- [Useful Resources](#useful-resources)
+  - [Awesome Lists](#awesome-lists)
+  - [Demos and Examples](#demos-and-examples)
+  - [Good Tips](#good-tips)
+  - [Raspberry Pi & ARM](#raspberry-pi--arm)
+  - [Security](#security-1)
+  - [Videos](#videos)
+- [Communities and Meetups](#communities-and-meetups)
+  - [Brazilian](#brazilian)
+  - [Chinese](#chinese)
+  - [English](#english)
+  - [Russian](#russian)
+  - [Spanish](#spanish)
+  - [Stargazers over time](#stargazers-over-time)
+
+<!-- /TOC -->
+
+# Legend
+
+- Abandoned :skull:
+- Beta :construction:
+- Monetized :heavy_dollar_sign:
+
+# What is Docker
+
+> Docker is an open platform for developers and sysadmins to build, ship, and run distributed applications. Consisting of Docker Engine, a portable, lightweight runtime and packaging tool, and Docker Hub, a cloud service for sharing applications and automating workflows, Docker enables apps to be quickly assembled from components and eliminates the friction between development, QA, and production environments. As a result, IT can ship faster and run the same app, unchanged, on laptops, data center VMs, and any cloud.
+
+_Source:_ [What is Docker](https://www.docker.com/why-docker)
+
+# Where to start
+
+- [Benefits of using Docker](https://semaphoreci.com/blog/docker-benefits) for development and delivery, with a practical roadmap for adoption.
+- [Docker Curriculum](https://github.com/prakhar1989/docker-curriculum): A comprehensive tutorial for getting started with Docker. Teaches how to use Docker and deploy dockerized apps on AWS with Elastic Beanstalk and Elastic Container Service.
+- [Docker Documentation](https://docs.docker.com/): the official documentation.
+- [Docker for beginners](https://github.com/groda/big_data/blob/master/docker_for_beginners.md): A tutorial for beginners who need to learn the basics of Docker—from "Hello world!" to basic interactions with containers, with simple explanations of the underlying concepts.
+- [Docker for novices](https://www.youtube.com/watch?v=xsjSadjKXns) An introduction to Docker for developers and testers who have never used it. (Video 1h40, recorded linux.conf.au 2019 — Christchurch, New Zealand) by Alex Clews.
+- [Docker Training](https://training.mirantis.com) :heavy_dollar_sign:
+- [Docker Tutorial for Beginners (Updated 2019 version)](https://hashnode.com/post/docker-tutorial-for-beginners-cjrj2hg5001s2ufs1nker9he2) — In this Docker tutorial, you'll learn all the basics and learn how you can containerize Node.js and Go applications. Even if you aren't familiar with these languages it should be easy for you to follow this tutorial and use any other language.
+- [Katacoda](https://www.katacoda.com/courses/docker): Learn Docker using Interactive Browser-Based Labs
+- [Learn Docker](https://github.com/dwyl/learn-docker): step-by-step tutorial and more resources (video, articles, cheat sheets) by [@dwyl](https://github.com/dwyl)
+- [Play With Docker](https://training.play-with-docker.com/): PWD is a great way to get started with Docker from beginner to advanced users. Docker runs directly in your browser.
+- [Practical Guide about Docker Commands in Spanish](https://github.com/brunocascio/docker-espanol) This spanish guide contains the use of basic docker commands with real life examples.
+- [Practical Introduction to Container Terminology](https://developers.redhat.com/blog/2018/02/22/container-terminology-practical-introduction/) The landscape for container technologies is larger than just docker. Without a good handle on the terminology, It can be difficult to grasp the key differences between docker and (pick your favorites, CRI-O, rkt, lxc/lxd) or understand what the Open Container Initiative is doing to standardize container technology.
+- [The Docker Handbook](https://www.freecodecamp.org/news/the-docker-handbook/) This 10,000+ words article is divided into 38 sections and walks readers through all the fundamentals of Docker with project examples.
+
+**Cheatsheets** by
+
+- [@eon01](https://github.com/eon01/DockerCheatSheet)
+- [@dimonomid](https://github.com/dimonomid/docker-quick-ref) (PDF)
+- [@JensPiegsa](https://github.com/JensPiegsa/docker-cheat-sheet)
+- [@wsargent](https://github.com/wsargent/docker-cheat-sheet) (Most popular)
+
+# Where to start (Windows)
+
+- [A Comparative Study of Docker Engine on Windows Server vs Linux Platform](https://collabnix.com/a-comparative-study-of-docker-engine-on-windows-server-vs-linux-platform/) Comparing the feature sets and implementations of Docker on Windows and Linux
+- [Build And Run Your First Docker Windows Server Container](https://www.docker.com/blog/build-your-first-docker-windows-server-container/) Walkthrough installing Docker on Windows 10, building a Docker image and running a Windows container
+- [Docker on Windows behind a firewall](https://toedter.com/2015/05/11/docker-on-windows-behind-a-firewall/) by [@kaitoedter](https://twitter.com/kaitoedter)
+- [Docker Quick Tutorial](https://vegibit.com/docker-quick-tutorial/) Introduces you to the official Getting Started Tutorial using Windows 10 and Hyper-V.
+- [Docker Reference Architecture: Modernizing Traditional .NET Framework Applications](https://success.mirantis.com/article/modernizing-traditional-dot-net-applications) - You will learn to identify the types of .NET Framework applications that are good candidates for containerization, the "lift-and-shift" approach to containerization.
+- [Docker with Microsoft SQL 2016 + ASP.NET](https://blog.alexellis.io/docker-does-sql2016-aspnet/) Demonstration running ASP.NET and SQL Server workloads in Docker
+- [Exploring ASP.NET Core with Docker in both Linux and Windows Containers](https://www.hanselman.com/blog/exploring-aspnet-core-with-docker-in-both-linux-and-windows-containers) Running ASP.NET Core apps in Linux and Windows containers, using [Docker for Windows][docker-for-windows]
+- [Running a Legacy ASP.NET App in a Windows Container](https://blog.sixeyed.com/dockerizing-nerd-dinner-part-1-running-a-legacy-asp-net-app-in-a-windows-container/) Steps for Dockerizing a legacy ASP.NET app and running as a Windows container
+- [Windows Containers and Docker: The 101](https://www.youtube.com/watch?v=N7SG2wEyQtM) :movie_camera: - A 20-minute overview, using Docker to run PowerShell, ASP.NET Core and ASP.NET apps
+- [Windows Containers Quick Start](https://docs.microsoft.com/en-us/virtualization/windowscontainers/about/) Overview of Windows containers, drilling down to Quick Starts for Windows 10 and Windows Server 2016
+
+---
+
+# Projects
+
+- Moby = open source development
+- Docker CE = free product release based on Moby
+- Docker EE = commercial product release based on Docker CE.
+
+> Docker EE is on the same code base as Docker CE, so also built from Moby, with commercial components added, such as "docker data center / universal control plane"
+
+- [Moby](https://github.com/moby/moby)
+- [Docker Images](https://hub.docker.com)
+- [Docker Compose](https://github.com/docker/compose/) (Define and run multi-container applications with Docker)
+- [Docker Machine](https://github.com/docker/machine) (Machine management for a container-centric world)
+- [Docker Registry][distribution] (The Docker toolset to pack, ship, store, and deliver content)
+- [Docker Swarm](https://github.com/docker/swarm) (Swarm: a Docker-native clustering system)
+
+## Container Operations
+
+### Container Composition
+
+- [bocker](https://github.com/icy/bocker) (2) - Write Dockerfile completely in Bash. Extensible and simple. --> Reusable by [@icy](https://github.com/icy)
+- [bocker](https://github.com/p8952/bocker) (1) :skull: - Docker implemented in 100 lines of bash by [p8952](https://github.com/p8952)
+- [box](https://github.com/box-builder/box) - Build Dockerfile images with a mruby DSL, includes flattening and layer manipulation
+- [Capitan](https://github.com/byrnedo/capitan) - Composable docker orchestration with added scripting support by [@byrnedo](https://github.com/byrnedo).
+- [compose_plantuml](https://github.com/funkwerk/compose_plantuml) :skull: - Generate Plantuml graphs from docker-compose files by [@funkwerk](https://github.com/funkwerk)
+- [Composerize](https://github.com/magicmark/composerize) - Convert docker run commands into docker-compose files
+- [crowdr](https://github.com/polonskiy/crowdr) - Tool for managing multiple Docker containers (`docker-compose` alternative) by [@polonskiy](https://github.com/polonskiy/)
+- [docker-compose-graphviz](https://github.com/abesto/docker-compose-graphviz) :skull: - Turn a docker-compose.yml files into Graphviz .dot files by [@abesto](https://github.com/abesto)
+- [docker-config-update](https://github.com/sudo-bmitch/docker-config-update) - Utility to update docker configs and secrets for deploying in a compose file by [@sudo-bmitch](https://github.com/sudo-bmitch)
+- [draw-compose](https://github.com/Alexis-benoist/draw-compose) :skull: - Utility to draw a schema of a docker compose by [@Alexis-benoist](https://github.com/Alexis-benoist)
+- [elsy](https://github.com/cisco/elsy) - An opinionated, multi-language, build tool based on Docker and Docker Compose
+- [habitus](https://github.com/cloud66-oss/habitus) - A Build Flow Tool for Docker by [@cloud66](https://github.com/cloud66)
+- [kompose](https://github.com/kubernetes/kompose) - Go from Docker Compose to Kubernetes
+- [Maestro](https://github.com/toscanini/maestro) :skull: - Maestro provides the ability to easily launch, orchestrate and manage multiple Docker containers as single unit by [@tascanini](https://github.com/toscanini)
+- [percheron](https://github.com/ashmckenzie/percheron) :skull: - Organise your Docker containers with muscle and intelligence by [@ashmckenzie](https://github.com/ashmckenzie)
+- [podman-compose](https://github.com/containers/podman-compose) - a script to run docker-compose.yml using podman by [@containers][containers]
+- [plash](https://github.com/ihucos/plash) - A container run and build engine - runs inside docker.
+- [rocker-compose](https://github.com/grammarly/rocker-compose) :skull: - Docker composition tool with idempotency features for deploying apps composed of multiple containers. By[@grammarly](grammarly).
+- [rocker](https://github.com/grammarly/rocker) :skull: - Extended Dockerfile builder. Supports multiple FROMs, MOUNTS, templates, etc. by [@grammarly](grammarly).
+- [Stacker](https://github.com/stacker/stacker-cli) - Docker Compose Templates. Stacker provides an abstraction layer over Docker Compose and a better DX (developer experience).
+- [Stitchocker](https://github.com/alexaandrov/stitchocker) - A lightweight and fast command line utility for conveniently grouping your docker-compose multiple container services. By [@alexaandrov](https://github.com/alexaandrov)
+- [Smalte](https://github.com/roquie/smalte) – Dynamically configure applications that require static configuration in docker container. By [@roquie](https://github.com/roquie)
+- [Zodiac](https://github.com/CenturyLinkLabs/zodiac) :skull: - A lightweight tool for easy deployment and rollback of dockerized applications. By [@CenturyLinkLabs][centurylinklabs]
+
+### Deployment and Infrastructure
+
+- [blackfish](https://gitlab.com/blackfish/blackfish) - a CoreOS VM to build swarm clusters for Dev & Production by [@blackfish](https://gitlab.com/blackfish/)
+- [BosnD](https://gitlab.com/n0r1sk/bosnd) - BosnD, the boatswain daemon - A dynamic configuration file writer & service reloader for dynamically changing container environments.
+- [Centurion](https://github.com/newrelic/centurion) - Centurion is a mass deployment tool for Docker fleets. It takes containers from a Docker registry and runs them on a fleet of hosts with the correct environment variables, host volume mappings, and port mappings. By [@newrelic](https://github.com/newrelic)
+- [Clocker](https://github.com/brooklyncentral/clocker) - Clocker creates and manages a Docker cloud infrastructure. Clocker supports single-click deployments and runtime management of multi-node applications that run as containers distributed across multiple hosts, on both Docker and Marathon. It leverages [Calico][calico] and [Weave][weave] for networking and [Brooklyn](https://brooklyn.apache.org/) for application blueprints. By [@brooklyncentral](https://github.com/brooklyncentral)
+- [Conduit](https://github.com/ehazlett/conduit) - Experimental deployment system for Docker by [@ehazlett](https://github.com/ehazlett)
+- [depcon](https://github.com/ContainX/depcon) - Depcon is written in Go and allows you to easily deploy Docker containers to Apache Mesos/Marathon, Amazon ECS and Kubernetes. By [@ContainX][containx]
+- [deploy](https://github.com/ttiny/deploy) :skull: - Git and Docker deployment tool. A middle ground between simple Docker composition tools and full blown cluster orchestration by [@ttiny](https://github.com/ttiny)
+- [dockit](https://github.com/humblec/dockit) :skull: - Do docker actions and Deploy gluster containers! By [@humblec](https://github.com/humblec)
+- [gitkube](https://github.com/hasura/gitkube) - Gitkube is a tool for building and deploying docker images on Kubernetes using `git push`. By [@Hasura](https://github.com/hasura/).
+- [Grafeas](https://github.com/grafeas/grafeas) - A common API for metadata about containers, from image and build details to security vulnerabilities. By [grafeas](https://github.com/grafeas)
+- [Longshoreman](https://github.com/longshoreman/longshoreman) :skull: - Longshoreman automates application deployment using Docker. Just create a Docker repository (or use a service), configure the cluster using AWS or Digital Ocean (or whatever you like) and deploy applications using a Heroku-like CLI tool. By [longshoreman](https://github.com/longshoreman)
+- [SwarmManagement](https://github.com/DIPSAS/SwarmManagement) - Swarm Management is a python application, installed with pip. The application makes it easy to manage a Docker Swarm by configuring a single yaml file describing which stacks to deploy, and which networks, configs or secrets to create.
+- [werf](https://github.com/werf/werf) - werf is a CI/CD tool for building Docker images efficiently and deploying them to Kubernetes using GitOps by [@flant](https://github.com/flant)
+
+### Monitoring
+
+- [Autoheal](https://github.com/willfarrell/docker-autoheal) - Monitor and restart unhealthy docker containers automatically.
+- [Axibase Collector](https://github.com/axibase/atsd-use-cases/tree/master/integrations/docker) - Axibase Collector streams performance counters, configuration changes and lifecycle events from the Docker engine(s) into Axibase Time Series Database for roll-up dashboards and integration with upstream monitoring systems.
+- [cAdvisor](https://github.com/google/cadvisor) - Analyzes resource usage and performance characteristics of running containers. Created by [@Google][google]
+- [dockprom](https://github.com/stefanprodan/dockprom) - Docker hosts and containers monitoring with Prometheus, Grafana, cAdvisor, NodeExporter and AlertManager by [@stefanprodan](https://github.com/stefanprodan)
+- [Docker-Alertd](https://github.com/deltaskelta/docker-alertd) - Monitor and send alerts based on docker container resource usage/statistics
+- [Docker-Flow-Monitor](https://github.com/docker-flow/docker-flow-monitor) - Reconfigures Prometheus when a new service is updated or deployed automatically by [@docker-flow][docker-flow]
+- [Dockerana](https://github.com/dockerana/dockerana) :skull: - packaged version of Graphite and Grafana, specifically targeted at metrics from Docker.
+- [DockProc](https://gitlab.com/n0r1sk/dockproc) - I/O monitoring for containers on processlevel.
+- [Dozzle](https://github.com/amir20/dozzle) - Monitor container logs in real-time with a browser or mobile device. [@amir20](https://github.com/amir20)
+- [Dynatrace](https://www.dynatrace.com/technologies/docker-monitoring/) :heavy_dollar_sign: - Monitor containerized applications without installing agents or modifying your Run commands
+- [Glances](https://github.com/nicolargo/glances) - A cross-platform curses-based system monitoring tool written in Python by [@nicolargo](https://github.com/nicolargo)
+- [Grafana Docker Dashboard Template](https://grafana.com/grafana/dashboards/179) - A template for your Docker, Grafana and Prometheus stack [@vegasbrianc][vegasbrianc]
+- [InfluxDB, cAdvisor, Grafana](https://github.com/vegasbrianc/docker-monitoring) - InfluxDB Time series DB in combination with Grafana and cAdvisor by [@vegasbrianc][vegasbrianc]
+- [LogJam](https://github.com/gocardless/logjam) - Logjam is a log forwarder designed to listen on a local port, receive log entries over UDP, and forward these messages on to a log collection server (such as logstash) by [@gocardless](https://github.com/gocardless)
+- [Logspout](https://github.com/gliderlabs/logspout) - Log routing for Docker container logs by [@gliderlabs][gliderlabs]
+- [monit-docker](https://github.com/decryptus/monit-docker) - Monitor docker containers resources usage or status and execute docker commands or inside containers. [@decryptus][decryptus]
+- [NexClipper](https://github.com/NexClipper/NexClipper) - NexClipper is the container monitoring and performance management solution specialized in Docker, Apache Mesos, Marathon, DC/OS, Mesosphere, Kubernetes by [@Nexclipper](https://github.com/NexClipper)
+- [Out-of-the-box Host/Container Monitoring/Logging/Alerting Stack](https://github.com/uschtwill/docker_monitoring_logging_alerting) - Docker host and container monitoring, logging and alerting out of the box using cAdvisor, Prometheus, Grafana for monitoring, Elasticsearch, Kibana and Logstash for logging and elastalert and Alertmanager for alerting. Set up in 5 Minutes. Secure mode for production use with built-in [Automated Nginx Reverse Proxy (jwilder's)][nginxproxy].
+- [SwarmAlert](https://github.com/gpulido/SwarmAlert) - Monitors a Docker Swarm and sends Pushover alerts when it finds a container with no healthy service task running.
+- [Zabbix Docker module](https://github.com/monitoringartist/Zabbix-Docker-Monitoring) - Zabbix module that provides discovery of running containers, CPU/memory/blk IO/net container metrics. Systemd Docker and LXC execution driver is also supported. It's a dynamically linked shared object library, so its performance is (~10x) better, than any script solution.
+- [Zabbix Docker](https://github.com/gomex/docker-zabbix) - Monitor containers automatically using zabbix LLD feature.
+
+### Networking
+
+- [Calico-Docker][calico] - Calico is a pure layer 3 virtual network that allows containers over multiple docker-hosts to talk to each other.
+- [Flannel](https://github.com/coreos/flannel/) - Flannel is a virtual network that gives a subnet to each host for use with container runtimes. By [@coreos][coreos]
+- [Freeflow](https://github.com/Microsoft/Freeflow) - High performance container overlay networks on Linux. Enabling RDMA (on both InfiniBand and RoCE) and accelerating TCP to bare metal performance. By [@Microsoft](https://github.com/Microsoft)
+- [netshoot](https://github.com/nicolaka/netshoot) - The netshoot container has a powerful set of networking tools to help troubleshoot Docker networking issues by [@nicolaka](https://github.com/nicolaka)
+- [Pipework](https://github.com/jpetazzo/pipework) - Software-Defined Networking for Linux Containers, Pipework works with "plain" LXC containers, and with the awesome Docker. By [@jpetazzo][jpetazzo]
+- [Weave][weave] (The Docker network) - Weave creates a virtual network that connects Docker containers deployed across multiple hosts.
+
+### Orchestration
+
+- [athena](https://github.com/athena-oss/athena) - An automation platform with a plugin architecture that allows you to easily create and share services.
+- [blimp](https://github.com/tubesandlube/blimp) :skull: - Uses Docker Machine to easily move a container from one Docker host to another, show containers running against all of your hosts, replicate a container across multiple hosts and more by [@defermat](https://github.com/defermat) and [@schvin](https://github.com/schvin)
+- [CloudSlang](https://github.com/CloudSlang/cloud-slang) - CloudSlang is a workflow engine to create Docker process automation
+- [clusterdock](https://github.com/clusterdock/clusterdock) - Docker container orchestration to enable the testing of long-running cluster deployments
+- [ContainerShip](https://github.com/containership/containership) :skull: - A simple container management platform
+- [Crane](https://github.com/Dataman-Cloud/crane) - Control plane based on docker built-in swarm [@Dataman-Cloud](https://github.com/Dataman-Cloud)
+- [Docker Flow Swarm Listener](https://github.com/docker-flow/docker-flow-swarm-listener) - Docker Flow Swarm Listener project is to listen to Docker Swarm events and send requests when a change occurs. By [@docker-flow][docker-flow]
+- [gantryd](https://github.com/DevTable/gantryd) :skull: - A framework for easy management of docker-based components across machines by [@DevTable](https://github.com/DevTable)
+- [Haven](https://github.com/codeabovelab/haven-platform) - Haven is a simplified container management platform that integrates container, application, cluster, image, and registry managements. By [@codeabovelab](https://github.com/codeabovelab)
+- [Helios](https://github.com/spotify/helios) :skull: - A simple platform for deploying and managing containers across an entire fleet of servers by [@spotify][spotify]
+- [Kontena](https://github.com/kontena/kontena) :skull: - The developer friendly container and micro services platform. Works on any cloud, easy to setup, simple to use.
+- [Kubernetes](https://github.com/kubernetes/kubernetes) - Open source orchestration system for Docker containers by Google
+- [ManageIQ](https://github.com/ManageIQ/manageiq) - Discover, optimize and control your hybrid IT. By [ManageIQ](https://github.com/ManageIQ)
+- [Mantl](https://github.com/mantl/mantl) - Mantl is a modern platform for rapidly deploying globally distributed services
+- [Marathon](https://github.com/mesosphere/marathon) - Marathon is a private PaaS built on Mesos. It automatically handles hardware or software failures and ensures that an app is "always on"
+- [Mesos](https://github.com/apache/mesos) - Resource/Job scheduler for containers, VM's and physical hosts [@apache](https://mesos.apache.org/)
+- [Nebula](https://github.com/nebula-orchestrator) - A Docker orchestration tool designed to manage massive scale distributed clusters.
+- [Nomad](https://github.com/hashicorp/nomad) - Easily deploy applications at any scale. A Distributed, Highly Available, Datacenter-Aware Scheduler by [@hashicorp](https://github.com/hashicorp)
+- [Panamax](https://github.com/CenturyLinkLabs/panamax-ui) :skull: - An open-source project that makes deploying complex containerized apps as easy as Drag-and-Drop by [@CenturyLinkLabs][centurylinklabs].
+- [Rancher](https://github.com/rancher/rancher) - An open source project that provides a complete platform for operating Docker in production by [@rancher][rancher].
+- [Swarm-cronjob](https://github.com/crazy-max/swarm-cronjob) - Create jobs on a time-based schedule on Swarm by [@crazy-max](crazy-max)
+
+### PaaS
+
+- [Atlantis](https://github.com/ooyala/atlantis) :skull: - Atlantis is an Open Source PaaS for HTTP applications built on Docker and written in Go
+- [caprover](https://github.com/caprover/caprover) - [previously known as CaptainDuckDuck] Automated Scalable Webserver Package (automated Docker+nginx) - Heroku on Steroids
+- [Convox Rack](https://github.com/convox/rack) - Convox Rack is open source PaaS built on top of expert infrastructure automation and devops best practices.
+- [Dcw](https://github.com/pbertera/dcw) - Docker-compose SSH wrapper: a very poor man PaaS, exposing the docker-compose and custom-container commands defined in container labels.
+- [Dokku](https://github.com/dokku/dokku) - Docker powered mini-Heroku that helps you build and manage the lifecycle of applications (originally by [@progrium][progrium])
+- [Empire](https://github.com/remind101/empire) - A PaaS built on top of Amazon EC2 Container Service (ECS)
+- [Exoframe](https://github.com/exoframejs/exoframe) - A self-hosted tool that allows simple one-command deployments using Docker
+- [Flynn](https://github.com/flynn/flynn) - A next generation open source platform as a service
+- [Hephy Workflow](https://github.com/teamhephy/workflow) - Open source PaaS for Kubernetes that adds a developer-friendly layer to any Kubernetes cluster, making it easy to deploy and manage applications. Fork of [Deis Workflow](https://github.com/deis/workflow)
+- [Nanobox](https://github.com/nanobox-io/nanobox) :heavy_dollar_sign: - An application development platform that creates local environments that can then be deployed and scaled in the cloud.
+- [OpenShift][openshift] - An open source PaaS built on [Kubernetes][kubernetes] and optimized for Dockerized app development and deployment by [Red Hat](https://www.redhat.com/en)
+- [Tsuru](https://github.com/tsuru/tsuru) - Tsuru is an extensible and open source Platform as a Service software
+
+### Reverse Proxy
+
+- [Docker Dnsmasq Updater](https://github.com/moonbuggy/docker-dnsmasq-updater) - Update a remote dnsmasq server with Docker container hostnames.
+- [docker-flow-proxy](https://github.com/docker-flow/docker-flow-proxy) - Reconfigures proxy every time a new service is deployed, or when a service is scaled. By [@docker-flow][docker-flow]
+- [docker-proxy](https://github.com/silarsis/docker-proxy) :skull: - Transparent proxy for docker containers, run in a docker container. By [@silarsis](https://github.com/silarsis)
+- [fabio](https://github.com/fabiolb/fabio) - A fast, modern, zero-conf load balancing HTTP(S) router for deploying microservices managed by consul. By [@magiconair](https://github.com/magiconair) (Frank Schroeder)
+- [h2o-proxy](https://github.com/zchee/h2o-proxy) :skull: - Automated H2O reverse proxy for Docker containers. An alternative to [jwilder/nginx-proxy][nginxproxy] by [@zchee](https://github.com/zchee)
+- [Let's Encrypt Nginx-proxy Companion](https://github.com/nginx-proxy/docker-letsencrypt-nginx-proxy-companion) - A lightweight companion container for the nginx-proxy. It allow the creation/renewal of Let's Encrypt certificates automatically. By [@JrCs](https://github.com/JrCs)
+- [muguet](https://github.com/mattallty/muguet) :skull: - DNS Server & Reverse proxy for Docker environments. By [@mattallty](https://github.com/mattallty)
+- [nginx-proxy][nginxproxy] - Automated nginx proxy for Docker containers using docker-gen by [@jwilder][jwilder]
+- [Nginx Proxy Manager](https://github.com/jc21/nginx-proxy-manager) - A beautiful web interface for proxying web based services with SSL. By [@jc21](https://github.com/jc21)
+- [Swarm Ingress Router](https://github.com/tpbowden/swarm-ingress-router) :skull: - Route DNS names to Swarm services based on labels. By [@tpbowden](https://github.com/tpbowden/)
+- [Swarm Router](https://github.com/flavioaiello/swarm-router) - A «zero config» service name based router for docker swarm mode with a fresh and more secure approach. By [@flavioaiello](https://twitter.com/flavioaiello)
+- [Træfɪk](https://github.com/containous/traefik) - Automated reverse proxy and load-balancer for Docker, Mesos, Consul, Etcd... By [@EmileVauge](https://github.com/emilevauge)
+
+### Runtime
+
+- [aind](https://github.com/aind-containers/aind) - AinD launches Android apps in Docker, by nesting Anbox containers inside Docker by [@aind-containers](https://github.com/aind-containers)
+- [cri-o](https://github.com/cri-o/cri-o) - Open Container Initiative-based implementation of Kubernetes Container Runtime Interface by [cri-o](https://github.com/cri-o)
+- [lxc](https://github.com/lxc/lxc) - LXC - Linux Containers
+- [podman](https://github.com/containers/libpod) - libpod is a library used to create container pods. Home of Podman by [@containers][containers]
+- [rlxc](https://github.com/brauner/rlxc) - LXC binary written in Rust by [@brauner](https://github.com/brauner)
+- [runtime-tools](https://github.com/opencontainers/runtime-tools) - oci-runtime-tool is a collection of tools for working with the OCI runtime specification by [@opencontainers](https://github.com/opencontainers)
+
+### Security
+
+- [Anchor Engine](https://github.com/anchore/anchore) - Analyze images for CVE vulnerabilities and against custom security policies by [@Anchor](https://github.com/anchore)
+- [Aqua Security](https://www.aquasec.com) :heavy_dollar_sign: - Securing container-based applications from Dev to Production on any platform
+- [bane](https://github.com/genuinetools/bane) - AppArmor profile generator for Docker containers by [@genuinetools][genuinetools]
+- [CIS Docker Benchmark](https://github.com/dev-sec/cis-docker-benchmark) - This [InSpec][inspec] compliance profile implement the CIS Docker 1.12.0 Benchmark in an automated way to provide security best-practice tests around Docker daemon and containers in a production environment. By [@dev-sec](https://github.com/dev-sec)
+- [Clair](https://github.com/quay/clair) - Clair is an open source project for the static analysis of vulnerabilities in appc and docker containers. By [@coreos][coreos]
+- [Dagda](https://github.com/eliasgranderubio/dagda) - Dagda is a tool to perform static analysis of known vulnerabilities, trojans, viruses, malware & other malicious threats in docker images/containers and to monitor the docker daemon and running docker containers for detecting anomalous activities. By [@eliasgranderubio](https://github.com/eliasgranderubio)
+- [Deepfence Enterprise](https://deepfence.io) :heavy_dollar_sign: - Full life cycle Cloud Native Workload Protection platform for kubernetes, virtual machines and serverless. By [@deepfence](deepfence)
+- [Deepfence Threat Mapper](https://github.com/deepfence/ThreatMapper) - Powerful runtime vulnerability scanner for kubernetes, virtual machines and serverless. By [@deepfence](deepfence)
+- [docker-bench-security](https://github.com/docker/docker-bench-security) - script that checks for dozens of common best-practices around deploying Docker containers in production. By [@docker][docker]
+- [docker-explorer](https://github.com/google/docker-explorer) - A tool to help forensicate offline docker acquisitions by [@Google][google]
+- [docker-lock](https://github.com/safe-waters/docker-lock) - A cli-plugin for docker to automatically manage image digests by tracking them in a separate Lockfile. By [@safe-waters][safe-waters]
+- [notary](https://github.com/theupdateframework/notary) - a server and a client for running and interacting with trusted collections. By [@TUF](https://github.com/theupdateframework)
+- [oscap-docker](https://github.com/OpenSCAP/openscap) - OpenSCAP provides oscap-docker tool which is used to scan Docker containers and images. By [OpenSCAP](https://github.com/OpenSCAP)
+- [Phonito Security](https://phonito.io/?b=b) :heavy_dollar_sign: - a Docker vulnerability scanner with constant Kubernetes monitoring and pipeline integration.
+- [Prisma Cloud](https://www.paloaltonetworks.com/prisma/cloud) :heavy_dollar_sign: - (previously Twistlock Security Suite) detects vulnerabilities, hardens container images, and enforces security policies across the lifecycle of applications.
+- [Sysdig Falco](https://github.com/falcosecurity/falco) - Sysdig Falco is an open source container security monitor. It can monitor application, container, host, and network activity and alert on unauthorized activity.
+- [Sysdig Secure](https://sysdig.com/products/kubernetes-security/runtime-security/) :heavy_dollar_sign: - Sysdig Secure addresses run-time security through behavioral monitoring and defense, and provides deep forensics based on open source Sysdig for incident response.
+- [Trend Micro DeepSecurity](https://www.trendmicro.com/en_us/business/products/hybrid-cloud/deep-security.html) :heavy_dollar_sign: - Trend Micro DeepSecurity offers runtime protection for container workloads and hosts as well as preruntime scanning of images to identify vulnerabilities, malware and content such as hardcoded secrets.
+- [Trivy](https://github.com/aquasecurity/trivy) - Aqua Security's open source simple and comprehensive vulnerability scanner for containers (suitable for CI).
+
+### Service Discovery
+
+- [docker-consul](https://github.com/gliderlabs/docker-consul) by [@progrium][progrium]
+- [etcd](https://github.com/etcd-io/etcd) - Distributed reliable key-value store for the most critical data of a distributed system by [@etcd-io](https://github.com/etcd-io) (former part of CoreOS)
+- [istio](https://github.com/istio/istio) - An open platform to connect, manage, and secure microservices by [@IstioMesh](istio)
+- [proxy](https://github.com/factorish/proxy) :skull: - lightweight nginx based load balancer self using service discovery provided by registrator. by [@factorish](https://github.com/factorish)
+- [registrator](https://github.com/gliderlabs/registrator) - Service registry bridge for Docker by [@gliderlabs][gliderlabs] and [@progrium][progrium]
+
+### Volume Management / Data
+
+- [Blockbridge](https://github.com/blockbridge/blockbridge-docker-volume) :heavy_dollar_sign:- The Blockbridge plugin is a volume plugin that provides access to an extensible set of container-based persistent storage options. It supports single and multi-host Docker environments with features that include tenant isolation, automated provisioning, encryption, secure deletion, snapshots and QoS. By [@blockbridge](https://github.com/blockbridge)
+- [Convoy](https://github.com/rancher/convoy) - an open-source Docker volume driver that can snapshot, backup and restore Docker volumes anywhere. By [@rancher][rancher]
+- [Docker Machine NFS](https://github.com/adlogix/docker-machine-nfs) Activates NFS for an existing boot2docker box created through Docker Machine on OS X.
+- [Docker Unison](https://github.com/leighmcculloch/docker-unison) A docker volume container using Unison for fast two-way folder sync. Created as an alternative to slow boot2docker volumes on OS X. By [@leighmcculloch](https://github.com/leighmcculloch)
+- [Local Persist](https://github.com/MatchbookLab/local-persist) Specify a mountpoint for your local volumes (created via `docker volume create`) so that files will always persist and so you can mount to different directories in different containers.
+- [Minio](https://github.com/minio/minio) - S3 compatible object storage server in Docker containers
+- [Netshare](https://github.com/ContainX/docker-volume-netshare) Docker NFS, AWS EFS, Ceph & Samba/CIFS Volume Plugin. By [@ContainX][containx]
+- [portworx](https://portworx.com) :heavy_dollar_sign: - Decentralized storage solution for persistent, shared and replicated volumes.
+- [quobyte](https://www.quobyte.com/) :heavy_dollar_sign: - fully fault-tolerant distributed file system with a docker volume driver
+- [REX-Ray](https://github.com/rexray/rexray) provides a vendor agnostic storage orchestration engine. The primary design goal is to provide persistent storage for Docker, Kubernetes, and Mesos. By[@thecodeteam](https://github.com/thecodeteam) (DELL Technologies)
+- [Storidge](https://github.com/Storidge/quick-start) :heavy_dollar_sign: - Software-defined Persistent Storage for Kubernetes and Docker Swarm
+
+### User Interface
+
+#### Desktop
+
+Native desktop applications for managing and montoring docker hosts and clusters
+
+- [Captain](https://getcaptain.co/) - Manage containers from the MacOSX menu bar by [@RickWong](https://github.com/rickwong)
+- [Dockeron](https://github.com/dockeron/dockeron) - A project built on Electron + Vue.js for Docker on desktop. [@fluency03](https://github.com/fluency03)
+- [DockerStacks](http://docker-stacks.com/) - Local LAMP/LEMP Development Studio [@sfx101](https://github.com/sfx101)
+- [DockStation](https://github.com/DockStation/dockstation) - A developer centric UI to configure, monitor, and manage services and containers [@dock_station](https://twitter.com/dock_station)
+- [Lifeboat](https://github.com/jplhomer/lifeboat) - An easy way to launch Docker projects with a graphical interface on your Mac. [@jplhomer](https://github.com/jplhomer)
+
+#### Terminal
+
+- [captain](https://github.com/jenssegers/captain) - Easily start and stop docker compose projects from any directory. By [@jenssegers](https://github.com/jenssegers)
+- [ctop (1)](https://github.com/yadutaf/ctop) - A command line / text based Linux Containers monitoring tool that works just like you expect (Python) by [@yadutaf](https://github.com/yadutaf)
+- [ctop (2)](https://github.com/bcicen/ctop) - Top-like interface for container metrics (Golang) by [@bcicen](https://github.com/bcicen/)
+- [dext-docker-registry-plugin](https://github.com/vutran/dext-docker-registry-plugin) - Search the Docker Registry with the Dext smart launcher.
+- [dive](https://github.com/wagoodman/dive) - A tool for exploring each layer in a docker image. By [wagoodman](https://github.com/wagoodman).
+- [docker-ls](https://github.com/mayflower/docker-ls) - CLI tools for browsing and manipulating docker registries by [@mayflower](https://github.com/mayflower)
+- [docker-ssh](https://github.com/jeroenpeeters/docker-ssh) - SSH Server for Docker containers ~ Because every container should be accessible. By [@jeroenpeeters](https://github.com/jeroenpeeters)
+- [Docker-mon](https://github.com/icecrime/docker-mon) :skull: - Console-based Docker monitoring by [@icecrime](https://github.com/icecrime)
+- [docker.el](https://github.com/Silex/docker.el) Manage docker from Emacs by [Silex](https://github.com/Silex)
+- [dockercraft](https://github.com/docker/dockercraft) - Docker + Minecraft = Dockercraft by [@docker][docker]
+- [dockerfile-mode](https://github.com/spotify/dockerfile-mode) An emacs mode for handling Dockerfiles by [@spotify][spotify]
+- [docker pushrm](https://github.com/christian-korneck/docker-pushrm) - A Docker CLI plugin that that lets you push the README.md file from the current directory to Docker Hub. Also supports Quay and Harbor. By [@christian-korneck](https://github.com/christian-korneck)
+- [dockersql](https://github.com/crosbymichael/dockersql) - A command line interface to query Docker using SQL by [@crosbymichael](https://github.com/crosbymichael)
+- [DockSTARTer](https://github.com/GhostWriters/DockSTARTer) - DockSTARTer helps you get started with home server apps running in Docker by ([GhostWriters](https://github.com/GhostWriters))
+- [dockly](https://github.com/lirantal/dockly) - An interactive shell UI for managing Docker containers by [@lirantal](https://github.com/lirantal)
+- [dry](https://github.com/moncho/dry) - An interactive CLI for Docker containers by [@moncho](https://github.com/moncho)
+- [DVM](https://github.com/howtowhale/dvm) - Docker version manager by [@howtowhale](https://github.com/howtowhale)
+- [goinside](https://github.com/iamsoorena/goinside) - Get inside a running docker container easily. by [@iamsoorena](https://github.com/iamsoorena)
+- [lazydocker](https://github.com/jesseduffield/lazydocker) - The lazier way to manage everything docker. A simple terminal UI for both docker and docker-compose, written in Go with the gocui library. By [@jesseduffield](https://github.com/jesseduffield)
+- [MultiDocker](https://github.com/marty90/multidocker) - Create a secure multi-user Docker machine, where each user is segregated into an indepentent container.
+- [ns-enter](https://github.com/jpetazzo/nsenter) - no more ssh, enter name spaces of container by [@jpetazzo][jpetazzo]
+- [Pdocker](https://github.com/g31s/Pdocker) - A simple tool to manage and maintain Docker for personal projects by [@g31s](g31s)
+- [Powerline-Docker](https://github.com/adrianmo/powerline-docker) - A Powerline segment for showing the status of Docker containers by [@adrianmo](https://github.com/adrianmo)
+- [proco](https://github.com/shiwaforce/poco) - Proco will help you to organise and manage Docker, Docker-Compose, Kubernetes projects of any complexity using simple YAML config files to shorten the route from finding your project to initialising it in your local environment. by [@shiwaforce](https://github.com/shiwaforce)
+- [reg](https://github.com/genuinetools/reg) - Docker registry v2 command line client by [@genuinetools][genuinetools]
+- [scuba](https://github.com/JonathonReinhart/scuba) - Transparently use Docker containers to encapsulate software build environments, by [@JonathonReinhart](https://github.com/JonathonReinhart)
+- [sen](https://github.com/TomasTomecek/sen) - Terminal user interface for docker engine, by [@TomasTomecek][tomastomecek]
+- [skopeo](https://github.com/containers/skopeo) - Work with remote images registries - retrieving information, images, signing content by [@containers][containers]
+- [supdock](https://github.com/segersniels/supdock) - Allows for slightly more visual usage of Docker with an interactive prompt. By [@segersniels](https://github.com/segersniels)
+- [tsaotun](https://github.com/qazbnm456/tsaotun) - Python based Assistance for Docker by [@qazbnm456](https://github.com/qazbnm456)
+- [wharfee](https://github.com/j-bennet/wharfee) - Autocompletion and syntax highlighting for Docker commands. by [@j-bennet](https://github.com/j-bennet)
+
+#### Web
+
+- [Container Web TTY](https://github.com/wrfly/container-web-tty) - Connect your containers via a web-tty [@wrfly](https://github.com/wrfly)
+- [Docker Compose UI](https://github.com/francescou/docker-compose-ui) - Manage docker-compose via HTTP. docker-compose-ui runs in a Docker container, mounts the hosts docker socket and exposes a RESTful API and AngularJS GUI
+- [Docker Registry Browser](https://github.com/klausmeyer/docker-registry-browser) - Web Interface for the Docker Registry HTTP API v2 by [@klausmeyer](https://github.com/klausmeyer)
+- [Docker Registry UI](https://github.com/atcol/docker-registry-ui) - A web UI for easy private/local Docker Registry integration by [@atcol](https://github.com/atcol)
+- [Docker Registry UI (Joxit)](https://github.com/Joxit/docker-registry-ui) - The simplest and cleanest UI for private registries by [@Joxit](https://github.com/Joxit)
+- [docker-registry-web](https://github.com/mkuchin/docker-registry-web) - Web UI, authentication service and event recorder for private docker registry v2 by [@mkuchin](https://github.com/mkuchin)
+- [docker-swarm-visualizer](https://github.com/dockersamples/docker-swarm-visualizer) - Visualizes Docker services on a Docker Swarm (for running demos).
+- [dockering-on-rails](https://github.com/Electrofenster/dockerding-on-rails) :skull: - Simple Web-Interface for Docker with a lot of features by [@Electrofenster](https://github.com/Electrofenster/)
+- [DockerSurfer](https://github.com/Simone-Erba/DockerSurfer) :skull: - A web service for analyze and browse dependencies between Docker images in the Docker registry, by [@Simone-Erba](https://github.com/Simone-Erba/)
+- [Kubevious](https://github.com/kubevious/kubevious) - A highly visual web UI for Kubernetes which renders configuration and state in an application centric way by [@rubenhak](https://github.com/rubenhak).
+- [OctoLinker](https://github.com/OctoLinker/OctoLinker) - A browser extension for GitHub that makes the image name in a `Dockerfile` clickable and redirect you to the related Docker Hub page.
+- [Portainer](https://github.com/portainer/portainer) - A lightweight management UI for managing your Docker hosts or Docker Swarm clusters by [@portainer](https://github.com/portainer)
+- [Rapid Dashboard](https://github.com/ozlerhakan/rapid) - A simple query dashboard to use Docker Remote API by [@ozlerhakan](https://github.com/ozlerhakan/)
+- [Seagull](https://github.com/tobegit3hub/seagull) - Friendly Web UI to monitor docker daemon. by [@tobegit3hub](https://github.com/tobegit3hub)
+- [Swarmpit](https://github.com/swarmpit/swarmpit) - Swarmpit provides simple and easy to use interface for your Docker Swarm cluster. You can manage your stacks, services, secrets, volumes, networks etc.
+- [Swirl](https://github.com/cuigh/swirl) - Swirl is a web management tool for Docker, focused on swarm cluster By [@cuigh](https://github.com/cuigh/)
+- [Theia](https://github.com/eclipse-theia/theia) - Extensible platform to develop full-fledged multi-language Cloud & Desktop IDE-like products with state-of-the-art web technologies.
+- [Yacht](https://github.com/SelfhostedPro/Yacht) :construction: - A Web UI for docker that focuses on templates and ease of use in order to make deployments as easy as possible. By [@SelfhostedPro](https://github.com/SelfhostedPro)
+
+## Docker Images
+
+### Base Tools
+
+Tools and applications that are either installed inside containers or designed to be run as a [sidecar](https://docs.microsoft.com/en-us/azure/architecture/patterns/sidecar)
+
+- [amicontained](https://github.com/genuinetools/amicontained) - Container introspection tool. Find out what container runtime is being used as well as features available by [@genuinetools][genuinetools]
+- [autodock](https://github.com/prologic/autodock) - Daemon for Docker Automation by [@prologic](https://github.com/prologic)
+- [Chaperone](https://github.com/garywiz/chaperone) - A single PID1 process designed for docker containers. Does user management, log management, startup, zombie reaping, all in one small package. by [@garywiz](https://github.com/garywiz)
+- [ckron](https://github.com/nicomt/ckron) - A cron-style job scheduler for docker, by [@nicomt](https://github.com/nicomt)
+- [CoreOS][coreos] - Linux for Massive Server Deployments
+- [distroless](https://github.com/GoogleContainerTools/distroless) - Language focused docker images, minus the operating system, by [@GoogleContainerTools][googlecontainertools]
+- [docker-alpine](https://github.com/gliderlabs/docker-alpine) - A super small Docker base image _(5MB)_ using Alpine Linux by [@gliderlabs][gliderlabs]
+- [docker-gen](https://github.com/jwilder/docker-gen) - Generate files from docker container meta-data by [@jwilder][jwilder]
+- [dockerize](https://github.com/jwilder/dockerize) - Utility to simplify running applications in docker containers by [@jwilder][jwilder]
+- [GoSu](https://github.com/tianon/gosu) - Run this specific application as this specific user and get out of the pipeline (entrypoint script tool) by [@tianon](https://github.com/tianon)
+- [is-docker](https://github.com/sindresorhus/is-docker) - Check if the process is running inside a Docker container by [@sindresorhus][sindresorhus]
+- [lstags](https://github.com/ivanilves/lstags) - sync Docker images across registries by [@ivanilves](https://github.com/ivanilves)
+- [NVIDIA-Docker](https://github.com/NVIDIA/nvidia-docker) - The NVIDIA Container Runtime for Docker by [@NVIDIA][nvidia]
+- [sue](https://github.com/theAkito/sue) - Executes a program as a user different from the user running sue. This is a maintainable alternative to ncopa/su-exec, which is the better tianon/gosu. This one is far better (higher performance, smaller size), than the original gosu, however it is far easier to maintain, than su-exec, which is written in plain C. Made by [@theAkito](https://github.com/theAkito)
+- [su-exec](https://github.com/ncopa/su-exec) - This is a simple tool that will simply execute a program with different privileges. The program will be excuted directly and not run as a child, like su and sudo does, which avoids TTY and signal issues. Why reinvent gosu? This does more or less exactly the same thing as gosu but it is only 10kb instead of 1.8MB. By [ncopa](https://github.com/ncopa)
+- [supercronic](https://github.com/aptible/supercronic) - crontab-compatible job runner, designed specifically to run in containers by [@aptible](https://github.com/aptible/)
+- [TrivialRC](https://github.com/vorakl/TrivialRC) - A minimalistic Runtime Configuration system and process manager for containers [@vorakl](https://github.com/vorakl)
+
+### Builder
+
+Applications designed to help or simplify building **new** images
+
+- [ansible-bender](https://github.com/ansible-community/ansible-bender) - A tool utilising `ansible` and `buildah` by [@TomasTomecek][tomastomecek]
+- [buildah](https://github.com/containers/buildah) - A tool that facilitates building OCI images by [@containers][containers]
+- [BuildKit](https://github.com/moby/buildkit) - Concurrent, cache-efficient, and Dockerfile-agnostic builder toolkit by [@moby project](https://github.com/moby)
+- [cekit](https://github.com/cekit/cekit) - A tool used by openshift to build base images using different build engines by [@cekit](https://github.com/cekit).
+- [container-diff](https://github.com/GoogleContainerTools/container-diff) - An image tool for comparing and analzying container images by [@GoogleContainerTools][googlecontainertools]
+- [container-factory](https://github.com/mutable/container-factory) - Produces Docker images from tarballs of application source code by [@mutable](https://github.com/mutable)
+- [copy-docker-image](https://github.com/mdlavin/copy-docker-image) - Copy a Docker image between registries without a full Docker installation by [@mdlavin](https://github.com/mdlavin)
+- [Derrick](https://github.com/alibaba/derrick) - A tool help you to automate the generation of Dockerfile and dockerize application by scanning the code. By [@alibaba](https://github.com/alibaba).
+- [dlayer](https://github.com/wercker/dlayer) - Stats collector for Docker layers by [@wercker](https://github.com/wercker)
+- [docker-companion](https://github.com/mudler/docker-companion) - A command line tool written in Golang to squash and unpack docker images by [@mudler](https://github.com/mudler/)
+- [docker-make](https://github.com/CtripCloud/docker-make) - Build, tag,and push a bunch of related docker images via a single command.
+- [docker-replay](https://github.com/bcicen/docker-replay) - Generate `docker run`command and options from running containers. By [bcicen](https://github.com/bcicen)
+- [DockerMake](https://github.com/avirshup/DockerMake) - A reproducible Docker image build system for complex software stacks. By [@avirshup](https://github.com/avirshup)
+- [DockerSlim](https://github.com/docker-slim/docker-slim) shrinks fat Docker images creating the smallest possible images.
+- [Dockly](https://github.com/swipely/dockly) - Dockly is a gem made to ease the pain of packaging an application in Docker by [@swipely](https://github.com/swipely/)
+- [dockramp](https://github.com/jlhawn/dockramp) :skull: - Proof of Concept: A Client Driven Docker Image Builder by [@jlhawn](https://github.com/jlhawn)
+- [essex](https://github.com/utensils/essex) - Boilerplate for Docker Based Projects: Essex is a CLI utility written in bash to quickly setup clean and consistent Docker projects with Makefile driven workflows. [@jamesbrink](https://github.com/jamesbrink)
+- [HPC Container Maker](https://github.com/NVIDIA/hpc-container-maker) - Generates Dockerfiles from a high level Python recipe, including building blocks for High-Performance Computing components by [@NVIDIA][nvidia]
+- [img](https://github.com/genuinetools/img) - Standalone, daemon-less, unprivileged Dockerfile and OCI compatible container image builder by [@genuinetools][genuinetools]
+- [kaniko](https://github.com/GoogleContainerTools/kaniko) - Build Container Images In Kubernetes. By [@GoogleContainerTools][googlecontainertools]
+- [makisu](https://github.com/uber/makisu) - Uber's fast and flexible unprivileged image builder for Mesos and Kubernetes, with distributed cache support. By [@uber](https://github.com/uber)
+- [MicroBadger](https://microbadger.com) - Analyze the contents of images and add metadata labels
+- [packer](https://www.packer.io/docs/builders/docker) - Hashicorp tool to build machine images including docker image integrated with configuration management tools like chef, puppet, ansible
+- [portainer](https://github.com/duedil-ltd/portainer) - Apache Mesos framework for building Docker images by [@duedil-ltd](https://github.com/duedil-ltd)
+- [Production-Ready Python Containers :heavy_dollar_sign:](https://pythonspeed.com/products/pythoncontainer/) - A template for creating production-ready Docker images for Python applications.
+- [runlike](https://github.com/lavie/runlike) - Generate `docker run`command and options from running containers by [@lavie](https://github.com/lavie)
+- [SkinnyWhale](https://github.com/djosephsen/skinnywhale) :skull: - Skinnywhale helps you make smaller (as in megabytes) Docker containers.
+- [Smith](https://github.com/oracle/smith) - A Micocontainer Builder and can perform multi-stage builds after the image is built [Oracle][oracle]
+- [Whaler](https://github.com/P3GLEG/Whaler) - Program to reverse Docker images into Dockerfiles by [@P3GLEG](https://github.com/P3GLEG/).
+- [Whales](https://github.com/Gueils/whales) - A tool to automatically dockerize your applications by [@icalialabs](https://github.com/IcaliaLabs).
+
+### Dockerfile
+
+- [chaperone-docker](https://github.com/garywiz/chaperone-docker) - A set of images using the Chaperone process manager, including a lean Alpine image, LAMP, LEMP, and bare-bones base kits.
+- [Dockerfile Generator](https://github.com/ozankasikci/dockerfile-generator) `dfg` is both a Go library and an executable that produces valid Dockerfiles using various input channels.
+- [Dockerfile Generator](https://jrruethe.github.io/blog/2015/09/20/dockerfile-generator/)
+- [Dockerfile Project](https://dockerfile.github.io/) - Trusted Automated Docker Builds. Dockerfile Project maintains a central repository of Dockerfile for various popular open source software services runnable on a Docker container.
+- [Dockershelf](https://github.com/Dockershelf/dockershelf) - A repository that serves as a collector for docker recipes that are universal, efficient and slim. Images are updated, tested and published daily via a Travis cron job. Maintained by [@CollageLabs](https://github.com/CollageLabs).
+- [dockmoor](https://github.com/MeneDev/dockmoor) :construction: - Manage docker image references and help to create reproducible builds with Docker. By [@MeneDev](https://github.com/MeneDev)
+- [Vektorcloud](https://github.com/vektorcloud) - A collection of minimal, Alpine-based Docker images
+
+Examples by:
+
+- [@arun-gupta](https://github.com/arun-gupta/docker-images)
+- [@awesome-startup](https://github.com/awesome-startup/docker-compose)
+- [@crosbymichael](https://github.com/crosbymichael/Dockerfiles)
+- [@jessfraz](https://github.com/jessfraz/dockerfiles)
+- [@komljen](https://github.com/komljen/dockerfile-examples)
+- [@kstaken](https://github.com/kstaken/dockerfile-examples)
+- [@ondrejmo](https://github.com/ondrejmo/Dockerfiles)
+- [@pandrew](https://gitlab.com/pandrew/dockerfiles)
+- [@vimagick](https://github.com/vimagick/dockerfiles)
+
+### Linter
+
+- [docker-image-size-limit](https://github.com/wemake-services/docker-image-size-limit) - A tool to keep an eye on your docker images size.
+- [Dockerfile Linter action](https://github.com/buddy-works/dockerfile-linter) - The linter lets you verify Dockerfile syntax to make sure it follows the best practices for building efficient Docker images.
+- [dockfmt](https://github.com/jessfraz/dockfmt) :construction: - Dockerfile formatter and parser by [@jessfraz][jessfraz]
+- [FROM:latest](https://github.com/replicatedhq/dockerfilelint) - An opinionated Dockerfile linter by [@replicatedhq](https://github.com/replicatedhq)
+- [Hadolint](https://github.com/hadolint/hadolint) - A Dockerfile linter that checks for best practices, common mistakes, and is also able to lint any bash written in `RUN` instructions; by [@lukasmartinelli](https://github.com/lukasmartinelli)
+- [Whale-linter](https://github.com/jeromepin/whale-linter) - A simple and small Dockerfile linter written in Python3+ without dependencies by [@jeromepin](https://github.com/jeromepin)
+
+### Metadata
+
+- [opencontainer](https://github.com/opencontainers/image-spec/blob/master/annotations.md) - A convention and shared namespace for Docker labels defined by OCI Image Spec.
+
+### Registry
+
+Services to securely store your Docker images.
+
+- [Amazon EC2 Container Registry :heavy_dollar_sign:](https://aws.amazon.com/ecr/) - Amazon EC2 Container Registry (ECR) is a fully-managed Docker container registry that makes it easy for developers to store, manage, and deploy Docker container images.
+- [Azure Container Registry :heavy_dollar_sign:](https://azure.microsoft.com/en-us/services/container-registry/) - Manage a Docker private registry as a first-class Azure resource
+- [CargoOS](https://github.com/RedCoolBeans/cargos-buildroot) - A bare essential OS for running the Docker Engine on bare metal or Cloud. By [@RedCoolBeans](https://github.com/RedCoolBeans)
+- [Cloudsmith :heavy_dollar_sign:](https://cloudsmith.com/docker-registry/) - A fully managed package management SaaS, with first-class support for public and private Docker registries (and many others, incl. Helm charts for the Kubernetes ecosystem). Has a generous free-tier and is also completely free for open-source.
+- [Cycle.io :heavy_dollar_sign:](https://cycle.io/) - Bare-metal container hosting.
+- [cleanreg](https://github.com/hcguersoy/cleanreg) - A small tool to delete image manifests from a Docker Registry implementing the API v2, dereferencing them for the GC by [@hcguersoy](https://github.com/hcguersoy)
+- [Dist :heavy_dollar_sign:](https://www.dist.cloud/product/container-registry/) - Private cloud-based Docker container registry
+- [Docker Hub](https://hub.docker.com/) provided by Docker Inc.
+- [Docker Registry v2][distribution] - The Docker toolset to pack, ship, store, and deliver content
+- [Docket](https://github.com/netvarun/docket) - Custom docker registry that allows for lightning fast deploys through bittorrent by [@netvarun](https://github.com/netvarun/)
+- [GCE Container Registry :heavy_dollar_sign:](https://cloud.google.com/container-registry/) Fast, private Docker image storage on Google Cloud Platform
+- [GitLab Container Registry](https://docs.gitlab.com/ce/user/project/container_registry.html) - Repositories focused on using it images in GitLab CI
+- [Harbor](https://github.com/goharbor/harbor) An open source trusted cloud native registry project that stores, signs, and scans content. Supports replication, user management, access control and activity auditing. By [CNCF](Sandbox) formerly [VMWare](https://github.com/vmware)
+- [JFrog Artifactory :heavy_dollar_sign:](https://jfrog.com/artifactory/) - Artifact Repository Manager, can be used as private Docker Registry as well
+- [Kraken](https://github.com/uber/kraken) - Uber's Highly scalable P2P docker registry, capable of distributing TBs of data in seconds.
+- [Portus](https://github.com/SUSE/Portus) - Authorization service and frontend for Docker registry (v2) by [@SUSE](https://github.com/SUSE)
+- [Private Docker Registry :heavy_dollar_sign:](https://container-registry.com/) - Dedicated Conainer Registry Service with unlimited private repositories, users, teams, namespaces together with enterprise grade authentication LDAP/AD/OAuth/SAML.
+- [Quay.io :heavy_dollar_sign:](https://quay.io/) (part of CoreOS) - Secure hosting for private Docker repositories
+- [Rescoyl](https://github.com/noteed/rescoyl) - Private Docker registry (free and open source) by [@noteed](https://github.com/noteed)
+- [Sonatype Nexus](https://www.sonatype.com/nexus/repository-oss) - Repository with Universal Support, also for Docker images
+- [TreeScale](https://github.com/treescale) - Build and Distribute container based applications. By [@tigranbs](https://github.com/tigranbs)
+
+## Development with Docker
+
+### API Client
+
+- [ahab](https://github.com/instacart/ahab) - Docker event handling with Python by [@instacart](https://github.com/instacart)
+- [clj-docker-client](https://github.com/lispyclouds/clj-docker-client) :construction: - Idiomatic Clojure client for the Docker remote API. By [@lispyclouds](https://github.com/lispyclouds)
+- [Docker Client for JVM](https://github.com/gesellix/docker-client) - A Docker remote api client library for the JVM, written in Groovy by [@gesellix][gesellix]
+- [Docker Client TypeScript](https://gitlab.com/masaeedu/docker-client) - Docker API client for JavaScript, automatically generated from Swagger API definition from moby repository. By [@masaeedu](https://github.com/masaeedu)
+- [docker-client](https://github.com/spotify/docker-client) :skull: - Java client for the Docker remote API. By [@spotify][spotify]
+- [docker-it-scala](https://github.com/whisklabs/docker-it-scala) - Docker integration testing kit with Scala by [@whisklabs](https://github.com/whisklabs)
+- [docker-java-api](https://github.com/amihaiemil/docker-java-api) - Lightweight, truly object-oriented, Java client for Docker's API. By [@amihaiemil](https://github.com/amihaiemil)
+- [docker-maven-plugin](https://github.com/fabric8io/docker-maven-plugin) - A Maven plugin for running and creating Docker images by [@fabric8io](https://github.com/fabric8io)
+- [Docker-PowerShell](https://github.com/Microsoft/Docker-PowerShell) - PowerShell Module for Docker
+- [Docker.DotNet](https://github.com/Microsoft/Docker.DotNet) - C#/.NET HTTP client for the Docker remote API by [@ahmetalpbalkan](ahmetalpbalkan)
+- [Docker.Registry.DotNet](https://github.com/ChangemakerStudios/Docker.Registry.DotNet) - .NET (C#) Client Library for interacting with a Docker Registry API (v2) [@rquackenbush](https://github.com/rquackenbush)
+- [dockerfile-maven](https://github.com/spotify/dockerfile-maven) - A Maven plugin for building and pushing Docker images by [@spotify][spotify]
+- [dockerode](https://github.com/apocas/dockerode) - Docker Remote API node.js module by [@apocas](https://github.com/apocas)
+- [DoMonit](https://github.com/eon01/DoMonit) - A simple Docker Monitoring wrapper For Docker API
+- [go-dockerclient](https://github.com/fsouza/go-dockerclient/) - Go HTTP client for the Docker remote API by [@fsouza](https://github.com/fsouza/)
+- [Gradle Docker plugin](https://github.com/gesellix/gradle-docker-plugin) - A Docker remote api plugin for Gradle by [@gesellix][gesellix]
+- [libcompose](https://github.com/docker/libcompose) - Go library for Docker Compose.
+- [Portainer stack utils](https://github.com/greenled/portainer-stack-utils) :construction: - Bash script to deploy/update/undeploy Docker stacks in a Portainer instance from a docker-compose yaml file. By [@greenled](https://github.com/greenled).
+- [sbt-docker-compose](https://github.com/Tapad/sbt-docker-compose) - Integrates Docker Compose functionality into sbt by [@kurtkopchik](https://github.com/kurtkopchik/)
+- [sbt-docker](https://github.com/marcuslonnberg/sbt-docker) - Create Docker images directly from sbt by [@marcuslonnberg](https://github.com/marcuslonnberg)
+
+### CI/CD
+
+- [Buddy :heavy_dollar_sign:](https://buddy.works) - The best of Git, build & deployment tools combined into one powerful tool that supercharged our development.
+- [Captain](https://github.com/harbur/captain) - Convert your Git workflow to Docker containers ready for Continuous Delivery by [@harbur](https://github.com/harbur).
+- [Cyclone](https://github.com/caicloud/cyclone) - Powerful workflow engine and end-to-end pipeline solutions implemented with native Kubernetes resources by [@caicloud](https://github.com/caicloud).
+- [Diun](https://github.com/crazy-max/diun) - Receive notifications when an image or repository is updated on a Docker registry by [@crazy-max](crazy-max).
+- [Docker plugin for Jenkins](https://github.com/jenkinsci/docker-plugin/) - The aim of the docker plugin is to be able to use a docker host to dynamically provision a slave, run a single build, then tear-down that slave.
+- [Dockupdater](https://github.com/dockupdater/dockupdater) - Automatically keep your docker services and your docker containers up-to-date
+- [Drone](https://github.com/drone/drone) - Continuous integration server built on Docker and configured using YAML files.
+- [GitLab Runner](https://gitlab.com/gitlab-org/gitlab-runner) - GitLab has integrated CI to test, build and deploy your code with the use of GitLab runners.
+- [GOCD-Docker](https://github.com/gocd/gocd-docker) :skull: - Go Server and Agent in docker containers to provision.
+- [Microservices Continuous Deployment](https://github.com/francescou/docker-continuous-deployment) - Continuous deployment of a microservices application.
+- [mu](https://github.com/stelligent/mu) - Tool to configure CI/CD of your container applications via AWS CodePipeline, CodeBuild and ECS [@Stelligent](https://github.com/stelligent)
+- [Ouroboros](https://github.com/pyouroboros/ouroboros) :skull: - Automatically update running Docker containers with notifications
+- [Popper](https://github.com/systemslab/popper) - Github actions workflow (HCL syntax) execution engine.
+- [Screwdriver :heavy_dollar_sign:](https://screwdriver.cd/) - Yahoo's OpenSource buildplatform designed for Continous Delivery.
+- [Skipper](https://github.com/Stratoscale/skipper) - Easily dockerize your Git repository by [@Stratoscale](https://github.com/Stratoscale)
+- [SwarmCI](https://github.com/ghostsquad/swarmci) - Create a distributed, isolated task pipeline in your Docker Swarm.
+- [Watchtower](https://github.com/containrrr/watchtower) - Automatically update running Docker containers
+
+### Development Environment
+
+- [batect](https://github.com/batect/batect) - build and testing environments as code tool: Dockerised build and testing environments made easy by [@charleskorn](https://github.com/charleskorn)
+- [Binci](https://github.com/binci/binci) - Containerize your development workflow. (formerly DevLab by [@TechnologyAdvice](https://github.com/TechnologyAdvice))
+- [Boot2Docker](https://github.com/boot2docker/boot2docker) - Docker for OSX and Windows
+- [construi](https://github.com/lstephen/construi) - Run your builds inside a Docker defined environment by [@lstephen](https://github.com/lstephen)
+- [Crashcart](https://github.com/oracle/crashcart) - Sideload Linux binaries into a running container for troubleshooting by [@Oracle][oracle]
+- [dde](https://github.com/whatwedo/dde) :construction: - Local development environment toolset based on Docker. By [@whatwedo](https://github.com/whatwedo)
+- [Devstep](https://github.com/fgrehm/devstep) :skull: - Development environments powered by Docker and buildpacks by [@fgrehm][fgrehm]
+- [Dinghy](https://github.com/codekitchen/dinghy) - An alternative way to use Docker on Mac OS X using Docker Machine with virtualbox, vmware, xhyve or parallels
+- [DIP](https://github.com/bibendi/dip) - CLI utility for straightforward provisioning and interacting with an application configured by docker-compose. By [@bibendi](https://github.com/bibendi)
+- [DLite](https://github.com/nlf/dlite) :skull: - Simplest way to use Docker on OSX, no VM needed. By [@nlf](https://github.com/nlf)
+- [dobi](https://github.com/dnephin/dobi) - A build automation tool for Docker applications. By [@dnephin](https://github.com/dnephin)
+- [DockerBuildManagement](https://github.com/DIPSAS/DockerBuildManagement) - Build Management is a python application, installed with pip. The application makes it easy to manage a build system based on Docker by configuring a single yaml file describing how to build, test, run or publish a containerized solution.
+- [Docker Missing Tools](https://github.com/nandoquintana/docker-missing-tools) - A set of bash commands to shortcut typical docker dev-ops. An alternative to creating typical helper scripts like "build.sh" and "deploy.sh" inside code repositories. By [@NandoQuintana](https://github.com/nandoquintana).
+- [Docker osx dev](https://github.com/brikis98/docker-osx-dev) :skull: - A productive development environment with Docker on OS X by [@brikis98](https://github.com/brikis98)
+- [Docker-Arch](https://github.com/Ph3nol/Docker-Arch) - Generate Web/CLI projects Dockerized development environments, from 1 simple YAML file. By [@Ph3nol](https://github.com/ph3nol)
+- [Docker-sync](https://github.com/EugenMayer/docker-sync) - Drastically improves performance ([50-70x](https://github.com/EugenMayer/docker-sync/wiki/4.-Performance)) when using Docker for development on Mac OS X/Windows and Linux while sharing code to the container. By [@EugenMayer](https://github.com/EugenMayer)
+- [docker-vm](https://github.com/shyiko/docker-vm) - Simple and transparent alternative to boot2docker (backed by Vagrant) by [@shyiko](https://github.com/shyiko)
+- [Dusty](https://github.com/gamechanger/dusty) - Managed Docker development environments on OS X
+- [Eclipse Che](https://github.com/eclipse/che) - Developer workspace server with Docker runtimes, cloud IDE, next-generation Eclipse IDE
+- [EnvCLI](https://github.com/EnvCLI/EnvCLI) - Replace your local installation of Node, Go, ... with project-specific docker containers. By [@EnvCLI](https://github.com/EnvCLI)
+- [footloose](https://github.com/weaveworks/footloose) - Spin containers that look like Virtual Machines - By [@dlespiau](https://github.com/dlespiau)
+- [forward2docker](https://github.com/bsideup/forward2docker) :skull: - Utility to auto forward a port from localhost into ports on Docker containers running in a boot2docker VM by [@bsideup](https://github.com/bsideup)
+- [Gebug](https://github.com/moshebe/gebug) - A tool that makes debugging of Dockerized Go applications super easy by enabling Debugger and Hot-Reload features, seamlessly.
+- [Lando](https://github.com/lando/lando) - Lando is for developers who want to quickly specify and painlessly spin up the services and tools needed to develop their projects. By [Tandem](https://thinktandem.io/)
+- [Vagga](https://github.com/tailhook/vagga) - Vagga is a containerisation tool without daemons. It is a fully-userspace container engine inspired by Vagrant and Docker, specialized for development environments by [@tailhook](https://github.com/tailhook/)
+- [Zsh-in-Docker](https://github.com/deluan/zsh-in-docker) - Install Zsh, Oh-My-Zsh and plugins inside a Docker container with one line! By [Deluan](https://www.deluan.com)
+
+### Garbage Collection
+
+- [caduc](https://github.com/tjamet/caduc) - A docker garbage collector cleaning stuff you did not use recently
+- [Docker Clean](https://github.com/ZZROTDesign/docker-clean) - A script that cleans Docker containers, images and volumes by [@zzrotdesign](https://github.com/ZZROTDesign)
+- [Docker-cleanup](https://github.com/meltwater/docker-cleanup) :skull: - Automatic Docker image, container and volume cleanup by [@meltwater](https://github.com/meltwater)
+- [docker-custodian](https://github.com/Yelp/docker-custodian) - Keep docker hosts tidy. By [@Yelp](https://github.com/Yelp)
+- [docker-garby](https://github.com/konstruktoid/docker-garby) - Docker garbage collection script by [@konstruktoid](https://github.com/konstruktoid).
+- [docker-gc](https://github.com/spotify/docker-gc) :skull: - A cron job that will delete old stopped containers and unused images by [@spotify][spotify]
+- [docker_gc](https://github.com/pdacity/docker_gc) - Image for automatic removing unused Docker Swarm objects. Also works just as Docker Service by [@pdacity](https://github.com/pdacity)
+- [sherdock](https://github.com/rancher/sherdock) :skull: - Automatic GC of images based on regexp by [@rancher][rancher]
+
+### Serverless
+
+- [AMP](https://github.com/appcelerator-archive/amp) :skull: - The open source unified CaaS/FaaS platform for Docker, batteries included. By [@Appcelerator](https://github.com/appcelerator-archive)
+- [Apache OpenWhisk](https://github.com/apache/openwhisk) - a serverless, open source cloud platform that executes functions in response to events at any scale. By [@apache](https://github.com/apache)
+- [Docker-Lambda](https://github.com/lambci/docker-lambda) - Docker images and test runners that replicate the live AWS Lambda environment. By [@lamb-ci](https://github.com/lambci)
+- [Funker](https://github.com/bfirsh/funker-example-voting-app) - Functions as Docker containers example voting app. By [@bfirsh](https://github.com/bfirsh)
+- [IronFunctions](https://github.com/iron-io/functions) - The serverless microservices platform FaaS (Funcitons as a Service) which uses Docker containers to run Any language or AWS Lambda functions
+- [OpenFaaS](https://github.com/openfaas/faas) - A complete serverless functions framework for Docker and Kubernetes. By [OpenFaaS](https://github.com/openfaas)
+- [SCAR](https://github.com/grycap/scar) - Serverless Container-aware Architectures (SCAR) is a serverless framework that allows easy deployment and execution of containers (e.g. Docker) in Serverless environments (e.g. Lambda) by [@grycap](https://github.com/grycap)
+
+### Testing
+
+- [Container Structure Test](https://github.com/GoogleContainerTools/container-structure-test) - A framework to validate the structure of an image by checking the outputs of commands or the contents of the filesystem. By [@GoogleContainerTools][googlecontainertools]
+- [dgoss](https://github.com/aelsabbahy/goss/tree/master/extras/dgoss) - A fast YAML based tool for validating docker containers.
+- [DockerSpec](https://github.com/zuazo/dockerspec) - A small Ruby Gem to run RSpec and Serverspec, Infrataster and Capybara tests against Dockerfiles or Docker images easily. By [@zuazo](https://github.com/zuazo)
+- [Dockunit](https://github.com/dockunit/platform) :skull: - Docker based integration tests. A simple Node based utility for running Docker based unit tests. By [@dockunit](https://github.com/dockunit)
+- [InSpec][inspec] - InSpec is an open-source testing framework for infrastructure with a human- and machine-readable language for specifying compliance, security and policy requirements. By [@chef](https://github.com/chef)
+- [Pull Dog](https://github.com/apps/pull-dog) - A GitHub app that automatically creates Docker-based test environments for your pull requests, from your docker-compose files. Not open source.
+- [Pumba](https://github.com/alexei-led/pumba) - Chaos testing tool for Docker. Can be deployed on kubernetes and CoreOS cluster. By [@alexei-led](https://github.com/alexei-led)
+
+### Wrappers
+
+- [Ansible](https://docs.ansible.com/ansible/latest/collections/community/general/docker_container_module.html) - Manage the life cycle of Docker containers. By RedHat
+- [Azk](https://github.com/azukiapp/azk) - Orchestrate development environments on your local machine by [@azukiapp](https://github.com/azukiapp)
+- [Beluga](https://github.com/cortexmedia/Beluga) :skull: - CLI to deploy docker containers on a single server or low amount of servers. By [@cortextmedia](https://github.com/cortexmedia)
+- [dexec](https://github.com/docker-exec/dexec) - Command line interface written in Go for running code with Docker Exec images.
+- [dockerized](https://github.com/benzaita/dockerized-cli) - Seamlessly execute commands in a container.
+- [Dray](https://github.com/CenturyLinkLabs/dray) - An engine for managing the execution of container-based workflows by [@CenturyLinkLabs][centurylinklabs]
+- [FuGu](https://github.com/mattes/fugu) :skull: - Docker run wrapper without orchestration by [@mattes](https://github.com/mattes)
+- [Shutit](https://github.com/ianmiell/shutit) - Tool for building and maintaining complex Docker deployments by [@ianmiell](https://github.com/ianmiell)
+- [subuser](https://github.com/subuser-security/subuser) - Makes it easy to securely and portably run graphical desktop applications in Docker
+- [T.A.D.S. boilerplate](https://github.com/Thomvaill/tads-boilerplate) - The power of Ansible and Terraform + the simplicity of Docker Swarm = Infrastructure as Code and DevOps best practices. By [@Thomvaill](https://github.com/Thomvaill)
+- [Turbo](https://github.com/ramitsurana/turbo) - Simple and Powerful utility for docker. By [@ramitsurana][ramitsurana]
+- [udocker](https://github.com/indigo-dc/udocker) - A tool to execute simple docker containers in batch or interactive systems without root privileges by [@inidigo-dc](https://github.com/indigo-dc)
+- [Vagrant - Docker provider](https://www.vagrantup.com/docs/providers/docker/basics.html) - Good starting point is [vagrant-docker-example](https://github.com/bubenkoff/vagrant-docker-example) by [@bubenkoff](https://github.com/bubenkoff)
+
+## Services based on Docker (:heavy_dollar_sign:)
+
+### CI Services
+
+- [CircleCI](https://circleci.com/) :heavy_dollar_sign: - Push or pull Docker images from your build environment, or build and run containers right on CircleCI.
+- [CodeFresh](https://codefresh.io) :heavy_dollar_sign: - Everything you need to build, test, and share your Docker applications. Provides automated end to end testing.
+- [CodeShip](https://cms.codeship.com/features/pro) :heavy_dollar_sign: - Work with your established Docker workflows while automating your testing and deployment tasks with our hosted platform dedicated to speed and security.
+- [ConcourseCI](https://concourse-ci.org) :heavy_dollar_sign: - A CI SaaS platform for developers and DevOps teams pipeline oriented.
+- [Semaphore CI](https://semaphoreci.com/) :heavy_dollar_sign: — A high-performance cloud solution that makes it easy to build, test and ship your containers to production.
+- [Shippable](https://app.shippable.com/) :heavy_dollar_sign: - A SaaS platform for developers and DevOps teams that significantly reduces the time taken for code to be built, tested and deployed to production.
+- [TravisCI](https://travis-ci.org/) :heavy_dollar_sign: - A Free github projects continuous integration Saas platform for developers and Devops.
+
+### CaaS
+
+- [Amazon ECS](https://aws.amazon.com/ecs/) :heavy_dollar_sign: - A management service on EC2 that supports Docker containers.
+- [Azure AKS](https://azure.microsoft.com/en-us/services/kubernetes-service/) :heavy_dollar_sign: - Simplify Kubernetes management, deployment, and operations. Use a fully managed Kubernetes container orchestration service.
+- [Cloud 66](https://www.cloud66.com) :heavy_dollar_sign: - Full-stack hosted container management as a service
+- [Codenvy](https://codenvy.com) :heavy_dollar_sign: - One-click Docker environments and cloud workspace for development teams
+- [Dockhero](https://dockhero.io/) :heavy_dollar_sign: - Dockhero is a Heroku add-on which turns a Docker image into a microservice attached to the Heroku app. Currently in beta.
+- [Giant Swarm](https://www.giantswarm.io/) :heavy_dollar_sign: - Simple microservice infrastructure. Deploy your containers in seconds.
+- [Google Container Engine](https://cloud.google.com/kubernetes-engine/docs/) :heavy_dollar_sign: - Docker containers on Google Cloud Computing powered by [Kubernetes][kubernetes].
+- [Jelastic Cloud](https://jelastic.cloud/) :heavy_dollar_sign: - "Easy-to-use" container hosting platfrom with automatic vertical and horizontal scaling. Available over 50+ hosting providers worldwide.
+- [Mesosphere DC/OS Platform](https://d2iq.com/products/dcos) :heavy_dollar_sign: - Integrated platform for data and containers built on Apache Mesos by [@mesosphere](https://d2iq.com)
+- [OpenShift Dedicated](https://www.openshift.com/products/dedicated/) :heavy_dollar_sign: - A hosted [OpenShift][openshift] cluster for running your Docker containers managed by Red Hat.
+- [Sloppy.io](https://sloppy.io/en/) :heavy_dollar_sign: - all-in-one solution for container deployment and hosting – made and hosted in Germany
+- [Triton](https://www.joyent.com/) :heavy_dollar_sign: - Elastic container-native infrastructure by Joyent.
+
+### Monitoring Services
+
+- [AppDynamics](https://www.appdynamics.com/community/exchange/extension/docker-monitoring-extension/) :heavy_dollar_sign: - AppDynamics gives enterprises real-time insights into application performance, user performance, and business performance so they can move faster in an increasingly sophisticated, software-driven world.
+- [Axibase Time-Series Database](https://axibase.com/products/axibase-time-series-database/writing-data/docker-cadvisor/) :heavy_dollar_sign: - Long-term retention of container statistics and built-in dashboards for Docker. Collected with native Google cAdvisor storage driver.
+- [Broadcom Docker Monitoring](https://www.broadcom.com/info/aiops/docker-monitoring) :heavy_dollar_sign: - Agile Operations solutions from Broadcom deliver the modern Docker monitoring businesses need to accelerate and optimize the performance of microservices and the dynamic Docker environments running them. Monitor both the Docker environment and apps that run inside them. (former CA Technologies)
+- [Collecting docker logs and stats with Splunk](https://www.splunk.com/en_us/blog/tips-and-tricks/collecting-docker-logs-and-stats-with-splunk.html)
+- [Datadog](https://www.datadoghq.com/) :heavy_dollar_sign: - Datadog is a full-stack monitoring service for large-scale cloud environments that aggregates metrics/events from servers, databases, and applications. It includes support for Docker, Kubernetes, and Mesos.
+- [Prometheus](https://prometheus.io/) :heavy_dollar_sign: - Open-source service monitoring system and time series database
+- [Site24x7](https://www.site24x7.com/docker-monitoring.html) :heavy_dollar_sign: - Docker Monitoring for DevOps and IT is a SaaS Pay per Host model
+- [SPM for Docker](https://github.com/sematext/sematext-agent-docker) :heavy_dollar_sign: - Monitoring of host and container metrics, Docker events and logs. Automatic log parser. Anomaly Detection and alerting for metrics and logs. [@sematext](https://github.com/sematext)
+- [Sysdig Monitor](https://sysdig.com/products/monitor/) :heavy_dollar_sign: - Sysdig Monitor can be used as either software or a SaaS service to monitor, alert, and troubleshoot containers using system calls. It has container-specific features for Docker and Kubernetes.
+
+# Useful Resources
+
+- **[Valuable Docker Links](http://nane.kratzke.pages.mylab.th-luebeck.de/about/blog/2014/08/24/valuable-docker-links/)** High quality articles about docker! **MUST SEE**
+- [Become a Docker Power User with Visual Studio Code](https://www.thebyte.io/become-docker-power-user-with-vs-code) - :heavy_dollar_sign: A training course to help you become a Docker Power user with Visual Studio Code
+- [Cloud Native Landscape](https://github.com/cncf/landscape)
+- [Docker Weekly](https://www.docker.com/blog/docker-weekly-archives/) Huge resource
+- [Programming Community Curated Resources for learning Docker](https://hackr.io/tutorials/learn-docker)
+- [Docker in Action, Second Edition](https://www.manning.com/books/docker-in-action-second-edition)
+- [Docker Community on Hashnode](https://hashnode.com/n/docker)
+- [Docker in Practice, Second Edition](https://www.manning.com/books/docker-in-practice-second-edition)
+- [Docker dev bookmarks](https://www.bookmarks.dev/search?q=docker) - use the tag [docker](https://www.bookmarks.dev/tagged/docker)
+- [Docker packaging guide for Python](https://pythonspeed.com/docker/) - a series of detailed articles on the specifics of Docker packaging for Python.
+- [Learn Docker in a Month of Lunches](https://www.manning.com/books/learn-docker-in-a-month-of-lunches)
+
+## Awesome Lists
+
+- [Awesome CI/CD](https://github.com/cicdops/awesome-ciandcd) - Not specific to docker but relevant.
+- [Awesome Kubernetes](https://github.com/ramitsurana/awesome-kubernetes) by [@ramitsurana][ramitsurana]
+- [Awesome Linux Container](https://github.com/Friz-zy/awesome-linux-containers) more general about container than this repo, by [@Friz-zy](https://github.com/Friz-zy).
+- [Awesome Selfhosted](https://github.com/awesome-selfhosted/awesome-selfhosted) list of Free Software network services and web applications which can be hosted locally by running in a classical way (setup local web server and run applications from there) or in a Docker container. By [@Kickball](https://github.com/Kickball)
+- [Awesome Sysadmin](https://github.com/n1trux/awesome-sysadmin) by [@n1trux](https://github.com/n1trux)
+- [ToolsOfTheTrade](https://github.com/cjbarber/ToolsOfTheTrade) a list of SaaS and On premise applications by [@cjbarber](https://github.com/cjbarber)
+
+## Demos and Examples
+
+- [Webstack-micro](https://github.com/ferbs/webstack-micro) Demo web app showing how Docker Compose might be used to set up an API Gateway, centralized authentication, background workers, and WebSockets as containerized services.
+- [An Annotated Docker Config for Frontend Web Development](https://nystudio107.com/blog/an-annotated-docker-config-for-frontend-web-development) A local development environment with Docker allows you to shrink-wrap the devops your project needs as config, making onboarding frictionless.
+
+## Good Tips
+
+- [Dealing with linked containers dependency in docker-compose](http://brunorocha.org/python/dealing-with-linked-containers-dependency-in-docker-compose.html) by [@rochacbruno](https://github.com/rochacbruno)
+- [Docker Caveats](http://docker-saigon.github.io/post/Docker-Caveats/) What You Should Know About Running Docker In Production (written 11 APRIL 2016) **MUST SEE**
+- [Docker Containers on the Desktop](https://blog.jessfraz.com/post/docker-containers-on-the-desktop/) - The **funniest way** to learn about docker by [@jessfraz][jessfraz] who also gave a [presentation](https://www.youtube.com/watch?v=1qlLUf7KtAw) about it @ DockerCon 2015
+- [Docker vs. VMs? Combining Both for Cloud Portability Nirvana](https://www.flexera.com/blog/cloud/docker-vs-vms-combining-both-for-cloud-portability-nirvana/)
+- [Don't Repeat Yourself with Anchors, Aliases and Extensions in Docker Compose Files](https://medium.com/@kinghuang/docker-compose-anchors-aliases-extensions-a1e4105d70bd) by [@King Chung Huang](https://github.com/kinghuang)
+- [GUI Apps with Docker](http://fabiorehm.com/blog/2014/09/11/running-gui-apps-with-docker/) by [@fgrehm][fgrehm]
+
+## Raspberry Pi & ARM
+
+- [Docker Pirates ARMed with explosive stuff](https://blog.hypriot.com/) Huge resource on clustering, swarm, docker, pre-installed image for SD card on Raspberry Pi
+- [Get Docker up and running on the RaspberryPi in three steps](https://github.com/umiddelb/armhf/wiki/Get-Docker-up-and-running-on-the-RaspberryPi-%28ARMv6%29-in-three-steps)
+- [git push docker containers to linux devices](https://www.balena.io) Modern DevOps for IoT, leveraging git and Docker.
+- [Installing, running, using Docker on armhf (ARMv7) devices](https://github.com/umiddelb/armhf/wiki/Installing,-running,-using-docker-on-armhf-%28ARMv7%29-devices)
+
+## Security
+
+- [Bringing new security features to Docker](https://opensource.com/business/14/9/security-for-docker)
+- [CVE Scanning Alpine images with Multi-stage builds in Docker 17.05](https://github.com/tomwillfixit/alpine-cvecheck) by [@tomwillfixit](https://twitter.com/tomwillfixit)
+- [Docker and SELinux](https://www.projectatomic.io/docs/docker-and-selinux/)
+- [Docker Secure Deployment Guidelines](https://github.com/AonCyberLabs/Docker-Secure-Deployment-Guidelines)
+- [Docker Security - Quick Reference](https://binarymist.io/publication/docker-security/)
+- [Docker Security Cheat Sheet](https://github.com/konstruktoid/Docker/blob/master/Security/CheatSheet.adoc)
+- [Docker Security: Are Your Containers Tightly Secured to the Ship? SlideShare](https://fr.slideshare.net/MichaelBoelen/docker-security-are-your-containers-tightly-secured-to-the-ship)
+- [How CVE's are handled on Offical Docker Images](https://github.com/docker-library/official-images/issues/1448)
+- [Lynis is an open source security auditing tool including Docker auditing](https://cisofy.com/lynis/)
+- [Security Best Practices for Building Docker Images](https://linux-audit.com/tag/docker/)
+- [Software Engineering Radio interview of Docker Security Team Lead (Diogo Mónica)](https://www.se-radio.net/2017/05/se-radio-episode-290-diogo-monica-on-docker-security/)
+- [Ten Docker Image Security Best Practices Cheat Sheet](https://snyk.io/blog/10-docker-image-security-best-practices/)
+- [Top ten most popular docker images each contain at least 30 vulnerabilities](https://snyk.io/blog/top-ten-most-popular-docker-images-each-contain-at-least-30-vulnerabilities/)
+- [Tuning Docker with the newest security enhancements](https://opensource.com/business/15/3/docker-security-tuning)
+
+## Videos
+
+- [Contributing to Docker by Andrew "Tianon" Page (InfoSiftr)](https://www.youtube.com/watch?v=1jwo8-1HYYg) (34:31)
+- [Deploying and scaling applications with Docker, Swarm, and a tiny bit of Python magic](https://www.youtube.com/watch?v=GpHMTR7P2Ms) (3:11:06) by [@jpetazzo][jpetazzo]
+- [Docker and SELinux by Daniel Walsh from Red Hat](https://www.youtube.com/watch?v=zWGFqMuEHdw) (40:23)
+- [Docker Course](https://www.youtube.com/watch?v=UZpyvK6UGFo) (Spanish) by [@pablokbs](https://github.com/pablokbs)
+- [Docker for Developers](https://www.youtube.com/watch?v=FdkNAjjO5yQ) (54:26) by [@jpetazzo][jpetazzo] <== Good introduction, context, demo
+- [Docker from scratch](https://www.youtube.com/playlist?list=PLLhEJK7fQIxD-btrjrqdEfQHbkZnQrmqE) (1:22:01) on YouTube by Paris Nakita Kejser
+- [Docker: How to Use Your Own Private Registry](https://www.youtube.com/watch?v=CAewZCBT4PI) (15:01)
+- [Docker in Production](https://www.youtube.com/watch?v=Glk5d5WP6MI) by [@jpetazzo][jpetazzo] (36:05)
+- [Docker Primer to Docker Compose](https://www.youtube.com/watch?v=G-s2GXGAjTk) (1:56:45) on YouTube by LoginRadius
+- [Docker Registry from scratch](https://www.youtube.com/playlist?list=PLLhEJK7fQIxAz3d4Fj3edq7UcxEhdTCBm) (44:40) on YouTube by Paris Nakita Kejser
+- [Docker Swarm from scratch](https://www.youtube.com/playlist?list=PLLhEJK7fQIxAY4gZd1Wl-GsLvg-e9Ap1e) (1:41:28) on YouTube by Paris Nakita Kejser
+- [Extending Docker with Plugins](https://vimeo.com/110835013) (15:21)
+- [From Local Docker Development to Production Deployments](https://www.youtube.com/watch?v=7CZFpHUPqXw) by [@jpetazzo][jpetazzo] @ AWS re:Invent 2015
+- [Immutable Infrastructure with Docker and EC2 by Michael Bryzek (Gilt)](https://www.youtube.com/watch?v=GaHzdqFithc) (42:04)
+- [Introduction to Docker and containers](https://www.youtube.com/watch?v=ZVaRK10HBjo) (3:09:00) by [@jpetazzo][jpetazzo]
+- [Logging on Docker: What You Need to Know](https://vimeo.com/123341629) (51:27)
+- [Performance Analysis of Docker - Jeremy Eder](https://www.youtube.com/watch?v=6f2E6PKYb0w) (1:36:58)
+- [Scalable Microservices with Kubernetes](https://www.udacity.com/course/scalable-microservices-with-kubernetes--ud615) Free Udacity course
+- [State of containers: a debate with CoreOS, VMware and Google](https://www.youtube.com/watch?v=IiITP3yIRd8) (27:38)
+
+
+# Communities and Meetups
+
+## Brazilian
+
+- [Docker BR on Slack](http://docker-br.herokuapp.com) - Auto invite url
+- [Docker BR on Telegram](https://telegram.me/dockerbr)
+
+## Chinese
+
+- [DockerOne](http://dockone.io/) Docker Community (in Chinese) by [@LiYingJie](http://dockone.io/people/%E6%9D%8E%E9%A2%96%E6%9D%B0)
+
+## English
+
+- [Docker Community](https://www.docker.com/docker-community)
+- [Docker Events](https://events.docker.com)
+- [Docker On Line Meetup](https://www.meetup.com/Docker-Online-Meetup/)
+- [Docker Reddit Community](https://www.reddit.com/r/docker/)
+
+## Russian
+
+- [Docker Russian-speaking Community](https://t.me/docker_ru)
+
+## Spanish
+
+- [Docker Tips](https://dockertips.com/)
+
+
+## Stargazers over time
+
+[![Stargazers over time](https://starchart.cc/veggiemonk/awesome-docker.svg)](https://starchart.cc/veggiemonk/awesome-docker)
+ 
+
+[contributing]: https://github.com/veggiemonk/awesome-docker/blob/master/.github/CONTRIBUTING.md
+[calico]: https://github.com/projectcalico/calicoctl
+[centurylinklabs]: https://github.com/CenturyLinkLabs
+[containx]: https://github.com/ContainX
+[containers]: https://github.com/containers
+[coreos]: https://github.com/coreos
+[cncf]: https://www.cncf.io
+[crazy-max]: https://github.com/crazy-max
+[deepfence]: https://github.com/deepfence
+[distribution]: https://github.com/docker/distribution
+[docker-flow]: https://github.com/docker-flow
+[docker-for-windows]: https://docs.docker.com/docker-for-windows/
+[docker]: https://github.com/docker
+[editreadme]: https://github.com/veggiemonk/awesome-docker/edit/master/README.md
+[fgrehm]: https://github.com/fgrehm
+[gesellix]: https://github.com/gesellix
+[genuinetools]: https://github.com/genuinetools
+[gliderlabs]: https://github.com/gliderlabs
+[grammarly]: https://github.com/grammarly
+[google]: https://github.com/google
+[googlecontainertools]: https://github.com/GoogleContainerTools
+[inspec]: https://github.com/inspec/inspec
+[jessfraz]: https://github.com/jessfraz
+[jpetazzo]: https://github.com/jpetazzo
+[jwilder]: https://github.com/jwilder
+[kubernetes]: https://kubernetes.io
+[nvidia]: https://github.com/nvidia
+[nginxproxy]: https://github.com/nginx-proxy/nginx-proxy
+[openshift]: https://www.okd.io
+[oracle]: https://github.com/oracle
+[progrium]: https://github.com/progrium
+[ramitsurana]: https://github.com/ramitsurana
+[rancher]: https://github.com/rancher
+[safe-waters]: https://github.com/safe-waters
+[sindresorhus]: https://github.com/sindresorhus/awesome
+[spotify]: https://github.com/spotify
+[tomastomecek]: https://github.com/TomasTomecek
+[vegasbrianc]: https://github.com/vegasbrianc
+[weave]: https://github.com/weaveworks/weave
+=======
+[![npm version](https://badge.fury.io/js/typescript-ioc.svg)](https://badge.fury.io/js/typescript-ioc)
+[![Build Status](https://travis-ci.org/thiagobustamante/typescript-ioc.png?branch=master)](https://travis-ci.org/thiagobustamante/typescript-ioc)
+[![Coverage Status](https://codecov.io/gh/thiagobustamante/typescript-ioc/branch/master/graph/badge.svg)](https://codecov.io/gh/thiagobustamante/typescript-ioc)
+[![Known Vulnerabilities](https://snyk.io/test/github/thiagobustamante/typescript-ioc/badge.svg?targetFile=package.json)](https://snyk.io/test/github/thiagobustamante/typescript-ioc?targetFile=package.json)
+
+# IoC Container for Typescript - 3.X
+This is a lightweight annotation-based dependency injection container for typescript.
+
+It can be used on browser, on react native or on node.js server code.
+
+**The documentation for the previous version can be found [here](https://github.com/thiagobustamante/typescript-ioc/wiki/Typescript-IoC-1.x)**
+
+
+**Table of Contents** 
+
+- [IoC Container for Typescript](#)
+  - [Installation](#installation)
+  - [Configuration](#configuration)
+  - [Basic Usage](#basic-usage)
+  - [Scopes](#scopes)
+    - [Singleton Scope](#singleton)
+    - [Request Scope](#inrequestscope)
+    - [Local Scope](#local-scope)
+    - [Custom Scopes](#custom-scopes)
+  - [@Factory](#factories)
+  - [@OnlyInstantiableByContainer](#the-onlyinstantiablebycontainer-annotation)
+  - [The Container Class](#the-container-class)
+    - [@InjectValue decorator and Constants](#injectvalue-decorator-and-constants)
+    - [Namespaces (Environments)](#namespaces-environments)
+    - [Creating temporary configurations](#creating-temporary-configurations)
+    - [Importing configurations from external file](#importing-configurations-from-external-file)
+  - [A note about classes and interfaces](#a-note-about-classes-and-interfaces)
+  - [Examples](#examples)
+    - [Using Container for testing](#using-container-for-testing)
+    - [Using Namespaces](#using-namespaces)
+  - [Browser usage](#browser-usage)
+  - [Restrictions](#restrictions)
+  - [Migrating from previous version](#migrating-from-previous-version)
+## Installation
+
+This library only works with typescript. Ensure it is installed:
+
+```bash
+npm install typescript -g
 ```
-$ npm install ink react
+
+To install typescript-ioc:
+
+```bash
+npm install typescript-ioc
 ```
 
-## Usage
+## Configuration
 
-```jsx
-import React, {useState, useEffect} from 'react';
-import {render, Text} from 'ink';
+Typescript-ioc requires the following TypeScript compilation options in your tsconfig.json file:
 
-const Counter = () => {
-	const [counter, setCounter] = useState(0);
-
-	useEffect(() => {
-		const timer = setInterval(() => {
-			setCounter(previousCounter => previousCounter + 1);
-		}, 100);
-
-		return () => {
-			clearInterval(timer);
-		};
-	}, []);
-
-	return <Text color="green">{counter} tests passed</Text>;
-};
-
-render(<Counter />);
-```
-
-<img src="media/demo.svg" width="600">
-
-You can also check it out live on [repl.it sandbox](https://ink-counter-demo.vadimdemedes.repl.run/).
-Feel free to play around with the code and fork this repl at [https://repl.it/@vadimdemedes/ink-counter-demo](https://repl.it/@vadimdemedes/ink-counter-demo).
-
-## Who's Using Ink?
-
-- [Gatsby](https://www.gatsbyjs.org) - Gatsby is a modern web framework for blazing fast websites.
-- [tap](https://node-tap.org) - A Test-Anything-Protocol library for JavaScript.
-- [Yarn 2](https://yarnpkg.com) - Fast, reliable, and secure dependency management for JavaScript.
-- [Terraform CDK](https://github.com/hashicorp/terraform-cdk) - CDK (Cloud Development Kit) for HashiCorp Terraform.
-- [Twilio's SIGNAL](https://github.com/twilio-labs/plugin-signal2020) - CLI for Twilio's SIGNAL conference. [Blog post](https://www.twilio.com/blog/building-conference-cli-in-react).
-- [Typewriter](https://github.com/segmentio/typewriter) - Generates strongly-typed [Segment](https://segment.com) analytics clients from arbitrary JSON Schema.
-- [Prisma](https://www.prisma.io) - The unified data layer for modern applications.
-- [Wallace](https://www.projectwallace.com) - Pretty CSS analytics on the CLI.
-- [Blitz](https://blitzjs.com) - The Fullstack React Framework.
-- [New York Times](https://github.com/nytimes/kyt) - NYT uses Ink `kyt` - a toolkit that encapsulates and manages the configuration for web apps.
-- [tink](https://github.com/npm/tink) - Next-generation runtime and package manager.
-- [loki](https://github.com/oblador/loki) - Visual Regression Testing for Storybook.
-- [Bit](https://github.com/teambit/bit) - Build, distribute and collaborate on components.
-- [Remirror](https://github.com/remirror/remirror) - Your friendly, world-class editor toolkit.
-- [Prime](https://github.com/birkir/prime) - Open source GraphQL CMS.
-- [Splash](https://github.com/Shopify/polaris-react/tree/master/scripts/splash) - Observe the splash zone of a change across the Shopify's [Polaris](https://polaris.shopify.com) component library.
-- [emoj](https://github.com/sindresorhus/emoj) - Find relevant emoji on the command-line.
-- [emma](https://github.com/maticzav/emma-cli) - Terminal assistant to find and install npm packages.
-- [swiff](https://github.com/simple-integrated-marketing/swiff) - Multi-environment command line tools for time-saving web developers.
-- [share](https://github.com/marionebl/share-cli) - Quickly share files from your command line.
-- [Kubelive](https://github.com/ameerthehacker/kubelive) - CLI for Kubernetes to provide live data about the cluster and its resources.
-- [changelog-view](https://github.com/jdeniau/changelog-view) - Tool view changelog in console.
-- [cfpush](https://github.com/mamachanko/cfpush) - An interactive Cloud Foundry tutorial in your terminal.
-- [startd](https://github.com/mgrip/startd) - Turn your React component into a web app from the command-line.
-- [wiki-cli](https://github.com/hexrcs/wiki-cli) - Search Wikipedia and read summaries directly in your terminal.
-- [garson](https://github.com/goliney/garson) - Build interactive config-based command-line interfaces.
-- [git-contrib-calendar](https://github.com/giannisp/git-contrib-calendar) - Display a contributions calendar for any git repository.
-- [gitgud](https://github.com/GitGud-org/GitGud) - An interactive command-line GUI for Git.
-- [Autarky](https://github.com/pranshuchittora/autarky) - An interactive CLI to find and delete old `node_modules` directories in order to free up disk space.
-
-## Contents
-
-- [Getting Started](#getting-started)
-- [Components](#components)
-  - [`<Text>`](#text)
-  - [`<Box>`](#box)
-  - [`<Newline>`](#newline)
-  - [`<Spacer>`](#spacer)
-  - [`<Static>`](#static)
-  - [`<Transform>`](#transform)
-- [Hooks](#hooks)
-  - [`useInput`](#useinputinputhandler-options)
-  - [`useApp`](#useapp)
-  - [`useStdin`](#usestdin)
-  - [`useStdout`](#usestdout)
-  - [`useStderr`](#usestderr)
-  - [`useFocus`](#usefocusoptions)
-  - [`useFocusManager`](#usefocusmanager)
-- [API](#api)
-- [Testing](#testing)
-- [Using React Devtools](#using-react-devtools)
-- [Useful Components](#useful-components)
-- [Useful Hooks](#useful-hooks)
-- [Examples](#examples)
-
-## Getting Started
-
-Use [create-ink-app](https://github.com/vadimdemedes/create-ink-app) to quickly scaffold a new Ink-based CLI.
-
-```
-$ mkdir my-ink-cli
-$ cd my-ink-cli
-$ npx create-ink-app
-```
-
-Alternatively, create a TypeScript project:
-
-```
-$ npx create-ink-app --typescript
-```
-
-<details><summary>Manual setup</summary>
-<p>
-Ink requires the same Babel setup as you would do for regular React-based apps in the browser.
-
-Set up Babel with a React preset to ensure all examples in this readme work as expected.
-After [installing Babel](https://babeljs.io/docs/en/usage), install `@babel/preset-react` and insert the following configuration in `babel.config.json`:
-
-```
-$ npm install --save-dev @babel/preset-react
-```
-
-```json
+```typescript
 {
-	"presets": [
-		"@babel/preset-react",
-		[
-			"@babel/preset-env",
-			{
-				"targets": {
-					"node": true
-				}
-			}
-		]
-	]
+  "compilerOptions": {
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "target": "es6" // or anything newer like esnext
+  }
 }
 ```
 
-Next, create a file `source.js`, where you'll type code that uses Ink:
+## Basic Usage
 
-```jsx
-import React from 'react';
-import {render, Text} from 'ink';
+```typescript
+import {Inject} from "typescript-ioc";
 
-const Demo = () => <Text>Hello World</Text>;
-
-render(<Demo />);
+class PersonDAO {
+  @Inject
+  restProxy: PersonRestProxy;
+}
 ```
 
-Then, transpile this file with Babel:
+That's it. You can just call now:
 
-```
-$ npx babel source.js -o cli.js
-```
-
-Now you can run `cli.js` with Node.js:
-
-```
-$ node cli
+```typescript
+let personDAO: PersonDAO = new PersonDAO();
 ```
 
-If you don't like transpiling files during development, you can use [import-jsx](https://github.com/vadimdemedes/import-jsx) to `require()` a JSX file and transpile it on the fly.
+And the dependencies will be resolved.
 
-</p>
-</details>
+You can also inject constructor parameters, like:
 
-Ink uses [Yoga](https://github.com/facebook/yoga) - a Flexbox layout engine to build great user interfaces for your CLIs using familiar CSS-like props you've used when building apps for the browser.
-It's important to remember that each element is a Flexbox container.
-Think of it as if each `<div>` in the browser had `display: flex`.
-See [`<Box>`](#box) built-in component below for documentation on how to use Flexbox layouts in Ink.
-Note that all text must be wrapped in a [`<Text>`](#text) component.
-
-## Components
-
-### `<Text>`
-
-This component can display text, and change its style to make it bold, underline, italic or strikethrough.
-
-```jsx
-import {render, Text} from 'ink';
-
-const Example = () => (
-	<>
-		<Text color="green">I am green</Text>
-		<Text color="black" backgroundColor="white">
-			I am black on white
-		</Text>
-		<Text color="#ffffff">I am white</Text>
-		<Text bold>I am bold</Text>
-		<Text italic>I am italic</Text>
-		<Text underline>I am underline</Text>
-		<Text strikethrough>I am strikethrough</Text>
-		<Text inverse>I am inversed</Text>
-	</>
-);
-
-render(<Example />);
+```typescript
+class PersonService {
+  private personDAO: PersonDAO;
+  constructor( @Inject personDAO: PersonDAO ) {
+    this.personDAO = personDAO;
+  }
+}
 ```
 
-**Note:** `<Text>` allows only text nodes and nested `<Text>` components inside of it. For example, `<Box>` component can't be used inside `<Text>`.
+and then, if you make an injection to this class, like...
 
-#### color
-
-Type: `string`
-
-Change text color.
-Ink uses [chalk](https://github.com/chalk/chalk) under the hood, so all its functionality is supported.
-
-```jsx
-<Text color="green">Green</Text>
-<Text color="#005cc5">Blue</Text>
-<Text color="rgb(232, 131, 136)">Red</Text>
+```typescript
+class PersonController {
+  @Inject
+  private personService: PersonService;
+}
 ```
 
-<img src="media/text-color.jpg" width="247">
+The container will create an instance of PersonService that receives the PersonDAO from the container on its constructor.
+But you can still call:
 
-#### backgroundColor
-
-Type: `string`
-
-Same as `color` above, but for background.
-
-```jsx
-<Text backgroundColor="green" color="white">Green</Text>
-<Text backgroundColor="#005cc5" color="white">Blue</Text>
-<Text backgroundColor="rgb(232, 131, 136)" color="white">Red</Text>
+```typescript
+let personService: PersonService = new PersonService(myPersonDAO);
 ```
 
-<img src="media/text-backgroundColor.jpg" width="226">
+And pass your own instance of PersonDAO to PersonService.
 
-#### dimColor
+Note that any type with a constructor can be injected.
 
-Type: `boolean`\
-Default: `false`
+```typescript
+class PersonController {
+  @Inject
+  private personService: PersonService;
 
-Dim the color (emit a small amount of light).
-
-```jsx
-<Text color="red" dimColor>
-	Dimmed Red
-</Text>
+  @Inject
+  creationTime: Date;
+}
 ```
 
-<img src="media/text-dimColor.jpg" width="138">
+### Inheritance
 
-#### bold
+You don't have to do anything special to work with sub-types.
 
-Type: `boolean`\
-Default: `false`
+```typescript
+abstract class BaseDAO {
+  @Inject
+  creationTime: Date;
+}
 
-Make the text bold.
+class PersonDAO extends BaseDAO {
+  @Inject
+  private personRestProxy: PersonRestProxy;
+}
 
-#### italic
-
-Type: `boolean`\
-Default: `false`
-
-Make the text italic.
-
-#### underline
-
-Type: `boolean`\
-Default: `false`
-
-Make the text underlined.
-
-#### strikethrough
-
-Type: `boolean`\
-Default: `false`
-
-Make the text crossed with a line.
-
-#### inverse
-
-Type: `boolean`\
-Default: `false`
-
-Inverse background and foreground colors.
-
-```jsx
-<Text inverse color="yellow">
-	Inversed Yellow
-</Text>
+class ProgrammerDAO extends PersonDAO {
+  @Inject
+  private programmerRestProxy: PersonRestProxy;
+}
 ```
 
-<img src="media/text-inverse.jpg" width="138">
+The above example will work as expected.
 
-#### wrap
+## Scopes
 
-Type: `string`\
-Allowed values: `wrap` `truncate` `truncate-start` `truncate-middle` `truncate-end`\
-Default: `wrap`
+You can use scopes to manage your instances. We have three pre defined scopes (```Scope.Singleton```, ```Scope.Request``` and ```Scope.Local```), but you can define your own custom Scope.
 
-This property tells Ink to wrap or truncate text if its width is larger than container.
-If `wrap` is passed (by default), Ink will wrap text and split it into multiple lines.
-If `truncate-*` is passed, Ink will truncate text instead, which will result in one line of text with the rest cut off.
+### @Singleton
 
-```jsx
-<Box width={7}>
-	<Text>Hello World</Text>
-</Box>
-//=> 'Hello\nWorld'
+Allow just one instance for each type bound to this scope.
 
-// `truncate` is an alias to `truncate-end`
-<Box width={7}>
-	<Text wrap="truncate">Hello World</Text>
-</Box>
-//=> 'Hello…'
+```typescript
+@Singleton 
+class PersonService {
+  @Inject
+  private personDAO: PersonDAO;
+}
 
-<Box width={7}>
-	<Text wrap="truncate-middle">Hello World</Text>
-</Box>
-//=> 'He…ld'
+class PersonController {
+  @Inject
+  private personService: PersonService;
 
-<Box width={7}>
-	<Text wrap="truncate-start">Hello World</Text>
-</Box>
-//=> '…World'
+  @Inject
+  creationTime: Date;
+}
 ```
 
-### `<Box>`
+So, we can create a lot of PersonController instances, but all of them will share the same singleton instance of PersonService
 
-`<Box>` is an essential Ink component to build your layout.
-It's like `<div style="display: flex">` in the browser.
+```typescript
+let controller1: PersonController = new PersonController();
+let controller2: PersonController = new PersonController();
 
-```jsx
-import {render, Box, Text} from 'ink';
-
-const Example = () => (
-	<Box margin={2}>
-		<Text>This is a box with margin</Text>
-	</Box>;
-);
-
-render(<Example />);
 ```
 
-#### Dimensions
+### @InRequestScope
 
-##### width
+Types bound to this scope will share instances between the same build context. When you call ```Container.get```, a new build context is created and every container resolution performed will share this context.
 
-Type: `number` `string`
+For example:
 
-Width of the element in spaces.
-You can also set it in percent, which will calculate the width based on the width of parent element.
+```typescript
+@InRequestScope
+class RequestScopeClass {}
 
-```jsx
-<Box width={4}>
-	<Text>X</Text>
-</Box>
-//=> 'X   '
+class FirstClass {
+    @Inject
+    public a: RequestScopeClass;
+}
+
+class SecondClass {
+    @Inject
+    public a: RequestScopeClass;
+    @Inject
+    public b: FirstClass;
+}
+
 ```
 
-```jsx
-<Box width={10}>
-	<Box width="50%">
-		<Text>X</Text>
-	</Box>
-	<Text>Y</Text>
-</Box>
-//=> 'X    Y'
+In that example, we can expect:
+
+```typescript
+const secondClass = Container.get(SecondClass);
+expect(secondClass.a).toEqual(secondClass.b.a);
 ```
 
-##### height
+### Local Scope
 
-Type: `number` `string`
+The container will create a new instance every time it will be asked to retrieve objects for types bound to the Local scope.
 
-Height of the element in lines (rows).
-You can also set it in percent, which will calculate the height based on the height of parent element.
+The Local scope is the default scope. So you don't need to configure nothing to work with a Local scope. However if you have a Type bound to other scope and want to change it to the Local scope, you can use the ```Scope.Local``` property:
 
-```jsx
-<Box height={4}>
-	<Text>X</Text>
-</Box>
-//=> 'X\n\n\n'
+```typescript
+@Singleton
+class MyType {}
+
+Container.bind(MyType).scope(Scope.Local);
 ```
 
-```jsx
-<Box height={6} flexDirection="column">
-	<Box height="50%">
-		<Text>X</Text>
-	</Box>
-	<Text>Y</Text>
-</Box>
-//=> 'X\n\n\nY\n\n'
+### Custom Scopes
+ To define a new scope, you just have to extend the Scope abstract class:
+
+```typescript
+class MyScope extends Scope { 
+  resolve(factory: ObjectFactory, source:Function, context: BuildContext) {
+    console.log('created by my custom scope.')
+    return factory(context);
+  }
+}
+@Scoped(new MyScope()) 
+class PersonService {
+  @Inject
+  private personDAO: PersonDAO;
+}
 ```
 
-##### minWidth
+## Factories
 
-Type: `number`
+Factories can be used to create the instances inside the IoC Container.
 
-Sets a minimum width of the element.
-Percentages aren't supported yet, see https://github.com/facebook/yoga/issues/872.
-
-##### minHeight
-
-Type: `number`
-
-Sets a minimum height of the element.
-Percentages aren't supported yet, see https://github.com/facebook/yoga/issues/872.
-
-#### Padding
-
-##### paddingTop
-
-Type: `number`\
-Default: `0`
-
-Top padding.
-
-##### paddingBottom
-
-Type: `number`\
-Default: `0`
-
-Bottom padding.
-
-##### paddingLeft
-
-Type: `number`\
-Default: `0`
-
-Left padding.
-
-##### paddingRight
-
-Type: `number`\
-Default: `0`
-
-Right padding.
-
-##### paddingX
-
-Type: `number`\
-Default: `0`
-
-Horizontal padding. Equivalent to setting `paddingLeft` and `paddingRight`.
-
-##### paddingY
-
-Type: `number`\
-Default: `0`
-
-Vertical padding. Equivalent to setting `paddingTop` and `paddingBottom`.
-
-##### padding
-
-Type: `number`\
-Default: `0`
-
-Padding on all sides. Equivalent to setting `paddingTop`, `paddingBottom`, `paddingLeft` and `paddingRight`.
-
-```jsx
-<Box paddingTop={2}>Top</Box>
-<Box paddingBottom={2}>Bottom</Box>
-<Box paddingLeft={2}>Left</Box>
-<Box paddingRight={2}>Right</Box>
-<Box paddingX={2}>Left and right</Box>
-<Box paddingY={2}>Top and bottom</Box>
-<Box padding={2}>Top, bottom, left and right</Box>
+```typescript
+const personFactory: ObjectFactory = () => new PersonService(); 
+@Factory(personFactory)
+class PersonService {
+  @Inject
+  private personDAO: PersonDAO;
+}
 ```
 
-#### Margin
+The Factory method will receive the ```BuildContext``` as parameter. So, if you need to retrieve another instance from the container to perform the factory instantiation, you can ask it to the BuildContext. For example:
 
-##### marginTop
-
-Type: `number`\
-Default: `0`
-
-Top margin.
-
-##### marginBottom
-
-Type: `number`\
-Default: `0`
-
-Bottom margin.
-
-##### marginLeft
-
-Type: `number`\
-Default: `0`
-
-Left margin.
-
-##### marginRight
-
-Type: `number`\
-Default: `0`
-
-Right margin.
-
-##### marginX
-
-Type: `number`\
-Default: `0`
-
-Horizontal margin. Equivalent to setting `marginLeft` and `marginRight`.
-
-##### marginY
-
-Type: `number`\
-Default: `0`
-
-Vertical margin. Equivalent to setting `marginTop` and `marginBottom`.
-
-##### margin
-
-Type: `number`\
-Default: `0`
-
-Margin on all sides. Equivalent to setting `marginTop`, `marginBottom`, `marginLeft` and `marginRight`.
-
-```jsx
-<Box marginTop={2}>Top</Box>
-<Box marginBottom={2}>Bottom</Box>
-<Box marginLeft={2}>Left</Box>
-<Box marginRight={2}>Right</Box>
-<Box marginX={2}>Left and right</Box>
-<Box marginY={2}>Top and bottom</Box>
-<Box margin={2}>Top, bottom, left and right</Box>
+```typescript
+const personFactory: ObjectFactory = (context) => new PersonService(context.resolve(PersonDAO)); 
+@Factory(personFactory)
+class PersonService {
+  constructor(private personDAO: PersonDAO){}
+}
 ```
 
-#### Flex
+## The @OnlyInstantiableByContainer annotation
+The @OnlyInstantiableByContainer annotation transforms the annotated class, changing its constructor. So, it will only be able to create new instances for the decorated class through to the IoC Container.
 
-##### flexGrow
+It is usefull, for example, to avoid direct instantiation of Singletons.
 
-Type: `number`\
-Default: `0`
-
-See [flex-grow](https://css-tricks.com/almanac/properties/f/flex-grow/).
-
-```jsx
-<Box>
-	<Text>Label:</Text>
-	<Box flexGrow={1}>
-		<Text>Fills all remaining space</Text>
-	</Box>
-</Box>
+```typescript
+@Singleton 
+@OnlyInstantiableByContainer 
+class PersonService {
+  @Inject
+  private personDAO: PersonDAO;
+}
 ```
 
-##### flexShrink
-
-Type: `number`\
-Default: `1`
-
-See [flex-shrink](https://css-tricks.com/almanac/properties/f/flex-shrink/).
-
-```jsx
-<Box width={20}>
-	<Box flexShrink={2} width={10}>
-		<Text>Will be 1/4</Text>
-	</Box>
-	<Box width={10}>
-		<Text>Will be 3/4</Text>
-	</Box>
-</Box>
+If anybody try to invoke: 
+```typescript
+new PersonService();
 ```
 
-##### flexBasis
+Will prodeuce a TypeError. 
 
-Type: `number` `string`
+## The Container class
 
-See [flex-basis](https://css-tricks.com/almanac/properties/f/flex-basis/).
+You can also bind types directly to Container resolution.
 
-```jsx
-<Box width={6}>
-	<Box flexBasis={3}>
-		<Text>X</Text>
-	</Box>
-	<Text>Y</Text>
-</Box>
-//=> 'X  Y'
+```typescript
+// it will override any annotation configuration
+Container.bind(PersonDAO).to(ProgrammerDAO).scope(Scope.Local); 
+
+// that will make any injection to Date to return 
+// the same instance, created when the first call is executed.
+Container.bind(Date).to(Date).scope(Scope.Singleton); 
+
+// it will ask the IoC Container to retrieve the instance.
+let personDAO = Container.get(PersonDAO); 
 ```
 
-```jsx
-<Box width={6}>
-	<Box flexBasis="50%">
-		<Text>X</Text>
-	</Box>
-	<Text>Y</Text>
-</Box>
-//=> 'X  Y'
+```typescript
+class PersonDAO {
+  @Inject
+  private personRestProxy: PersonRestProxy;
+}
+
+Container.bind(PersonDAO); 
+let personDAO: PersonDAO = Container.get(PersonDAO); 
+// or
+let otherPersonDAO: PersonDAO = new PersonDAO(); 
+// personDAO.personRestProxy is defined. It was resolved by Container.
 ```
 
-##### flexDirection
+```typescript
+@OnlyInstantiableByContainer
+@Singleton
+class PersonDAO {
+}
 
-Type: `string`\
-Allowed values: `row` `row-reverse` `column` `column-reverse`
+let p: PersonDAO = new PersonDAO(); // throws a TypeError.  classes decorated with @OnlyInstantiableByContainer can not be instantiated directly
 
-See [flex-direction](https://css-tricks.com/almanac/properties/f/flex-direction/).
+const personFactory: ObjectFactory = () => new PersonDAO();
+Container.bind(PersonDAO).factory(personFactory); //Works OK
 
-```jsx
-<Box>
-	<Box marginRight={1}>
-		<Text>X</Text>
-	</Box>
-	<Text>Y</Text>
-</Box>
-// X Y
-
-<Box flexDirection="row-reverse">
-	<Text>X</Text>
-	<Box marginRight={1}>
-		<Text>Y</Text>
-	</Box>
-</Box>
-// Y X
-
-<Box flexDirection="column">
-	<Text>X</Text>
-	<Text>Y</Text>
-</Box>
-// X
-// Y
-
-<Box flexDirection="column-reverse">
-	<Text>X</Text>
-	<Text>Y</Text>
-</Box>
-// Y
-// X
+let personDAO = Container.get(PersonDAO); // Works OK
 ```
 
-##### alignItems
+### @InjectValue decorator and Constants
 
-Type: `string`\
-Allowed values: `flex-start` `center` `flex-end`
+It is possible to bind constants to the Container. It is useful for configurations, for example.
 
-See [align-items](https://css-tricks.com/almanac/properties/a/align-items/).
+```typescript
+interface Config {
+    dependencyURL: string;
+    port: number;
+}
 
-```jsx
-<Box alignItems="flex-start">
-	<Box marginRight={1}>
-		<Text>X</Text>
-	</Box>
-	<Text>
-		A
-		<Newline/>
-		B
-		<Newline/>
-		C
-	</Text>
-</Box>
-// X A
-//   B
-//   C
-
-<Box alignItems="center">
-	<Box marginRight={1}>
-		<Text>X</Text>
-	</Box>
-	<Text>
-		A
-		<Newline/>
-		B
-		<Newline/>
-		C
-	</Text>
-</Box>
-//   A
-// X B
-//   C
-
-<Box alignItems="flex-end">
-	<Box marginRight={1}>
-		<Text>X</Text>
-	</Box>
-	<Text>
-		A
-		<Newline/>
-		B
-		<Newline/>
-		C
-	</Text>
-</Box>
-//   A
-//   B
-// X C
+Container.bindName('config').to({
+    dependencyURL: 'http://localhost:8080',
+    port: 1234
+});
 ```
 
-##### alignSelf
+And then you can use the ```@InjectValue``` decorator exactly as you use ```@Inject``` to inject instances.
 
-Type: `string`\
-Default: `auto`\
-Allowed vales: `auto` `flex-start` `center` `flex-end`
-
-See [align-self](https://css-tricks.com/almanac/properties/a/align-self/).
-
-```jsx
-<Box height={3}>
-	<Box alignSelf="flex-start">
-		<Text>X</Text>
-	</Box>
-</Box>
-// X
-//
-//
-
-<Box height={3}>
-	<Box alignSelf="center">
-		<Text>X</Text>
-	</Box>
-</Box>
-//
-// X
-//
-
-<Box height={3}>
-	<Box alignSelf="flex-end">
-		<Text>X</Text>
-	</Box>
-</Box>
-//
-//
-// X
+```typescript
+class MyService {
+    constructor(@InjectValue('config') public config: Config) { }
+}
 ```
 
-##### justifyContent
+It is possible to inject an internal property from a constant, like:
 
-Type: `string`\
-Allowed values: `flex-start` `center` `flex-end` `space-between` `space-around`
-
-See [justify-content](https://css-tricks.com/almanac/properties/j/justify-content/).
-
-```jsx
-<Box justifyContent="flex-start">
-	<Text>X</Text>
-</Box>
-// [X      ]
-
-<Box justifyContent="center">
-	<Text>X</Text>
-</Box>
-// [   X   ]
-
-<Box justifyContent="flex-end">
-	<Text>X</Text>
-</Box>
-// [      X]
-
-<Box justifyContent="space-between">
-	<Text>X</Text>
-	<Text>Y</Text>
-</Box>
-// [X      Y]
-
-<Box justifyContent="space-around">
-	<Text>X</Text>
-	<Text>Y</Text>
-</Box>
-// [  X   Y  ]
+```typescript
+class MyService {
+    constructor(@InjectValue('config.dependencyURL') private url: string,
+                @InjectValue('myConfig.otherProperty.item[0].otherURL') private otherURL: string) { }
+}
 ```
 
-#### Visibility
+And also to mix constants and other container injections, like:
 
-##### display
-
-Type: `string`\
-Allowed values: `flex` `none`\
-Default: `flex`
-
-Set this property to `none` to hide the element.
-
-#### Borders
-
-##### borderStyle
-
-Type: `string`\
-Allowed values: `single` `double` `round` `bold` `singleDouble` `doubleSingle` `classic`
-
-Add a border with a specified style.
-If `borderStyle` is `undefined` (which it is by default), no border will be added.
-Ink uses border styles from [`cli-boxes`](https://github.com/sindresorhus/cli-boxes) module.
-
-```jsx
-<Box flexDirection="column">
-	<Box>
-		<Box borderStyle="single" marginRight={2}>
-			<Text>single</Text>
-		</Box>
-
-		<Box borderStyle="double" marginRight={2}>
-			<Text>double</Text>
-		</Box>
-
-		<Box borderStyle="round" marginRight={2}>
-			<Text>round</Text>
-		</Box>
-
-		<Box borderStyle="bold">
-			<Text>bold</Text>
-		</Box>
-	</Box>
-
-	<Box marginTop={1}>
-		<Box borderStyle="singleDouble" marginRight={2}>
-			<Text>singleDouble</Text>
-		</Box>
-
-		<Box borderStyle="doubleSingle" marginRight={2}>
-			<Text>doubleSingle</Text>
-		</Box>
-
-		<Box borderStyle="classic">
-			<Text>classic</Text>
-		</Box>
-	</Box>
-</Box>
+```typescript
+class MyService {
+    constructor(@InjectValue('config.dependencyURL') private url: string,
+                @InjectValue('myConfig.otherProperty.item[0].otherURL') private otherURL: string, 
+                @Inject private myRepository: MyRepository) { }
+}
 ```
 
-<img src="media/box-borderStyle.jpg" width="521">
+Value Injections can be used direclty in class properties:
 
-See example in [examples/borders](examples/borders/borders.js).
-
-##### borderColor
-
-Type: `string`
-
-Change border color.
-Accepts the same values as [`color`](#color) in `<Text>` component.
-
-```jsx
-<Box borderStyle="round" borderColor="green">
-	<Text>Green Rounded Box</Text>
-</Box>
+```typescript
+class MyService {
+    @InjectValue('config.dependencyURL') 
+    private url: string;
+    
+    @InjectValue('myConfig.otherProperty.item[0].otherURL') 
+    private otherURL: string;
+    
+    @Inject 
+    private myRepository: MyRepository;
+}
 ```
 
-<img src="media/box-borderColor.jpg" width="228">
+Or read directly from the Container:
 
-### `<Newline>`
-
-Adds one or more newline (`\n`) characters.
-Must be used within `<Text>` components.
-
-#### count
-
-Type: `number`\
-Default: `1`
-
-Number of newlines to insert.
-
-```jsx
-import {render, Text, Newline} from 'ink';
-
-const Example = () => (
-	<Text>
-		<Text color="green">Hello</Text>
-		<Newline />
-		<Text color="red">World</Text>
-	</Text>
-);
-
-render(<Example />);
+```typescript
+const url: string = Container.getValue('config.dependencyURL');
 ```
 
-Output:
+It is possible to bind an internal property of a constant, like:
 
-```
-Hello
-World
-```
-
-### `<Spacer>`
-
-A flexible space that expands along the major axis of its containing layout.
-It's useful as a shortcut for filling all the available spaces between elements.
-
-For example, using `<Spacer>` in a `<Box>` with default flex direction (`row`) will position "Left" on the left side and will push "Right" to the right side.
-
-```jsx
-import {render, Box, Text, Spacer} from 'ink';
-
-const Example = () => (
-	<Box>
-		<Text>Left</Text>
-		<Spacer />
-		<Text>Right</Text>
-	</Box>
-);
-
-render(<Example />);
+```typescript
+Container.bindName('config.dependencyURL').to('http://anewURL.com');
 ```
 
-In a vertical flex direction (`column`), it will position "Top" to the top of the container and push "Bottom" to the bottom of it.
-Note, that container needs to be tall to enough to see this in effect.
+### Namespaces (Environments)
 
-```jsx
-import {render, Box, Text, Spacer} from 'ink';
+It is possible to create specific namespaces with custom configurations and then tell container to use these namespaces.
 
-const Example = () => (
-	<Box flexDirection="column" height={10}>
-		<Text>Top</Text>
-		<Spacer />
-		<Text>Bottom</Text>
-	</Box>
-);
+For example:
 
-render(<Example />);
+```typescript
+Container.bindName('config.dependencyURL').to('http://myURL.com');
+const namespace = Container.namespace('test');
+Container.bindName('config.dependencyURL').to('http://anewURL.com');
 ```
 
-### `<Static>`
+Only if the namespace ```'test'``` is active, the ```'config.dependencyURL'``` will resolve to ```'http://anewURL.com'```. 
 
-`<Static>` component permanently renders its output above everything else.
-It's useful for displaying activity like completed tasks or logs - things that
-are not changing after they're rendered (hence the name "Static").
+To use the default namespace, just call ```Container.namespace(null)```.
 
-It's preferred to use `<Static>` for use cases like these, when you can't know
-or control the amount of items that need to be rendered.
+If you want to remove a namespace, just call ```namespace.remove()```
 
-For example, [Tap](https://github.com/tapjs/node-tap) uses `<Static>` to display
-a list of completed tests. [Gatsby](https://github.com/gatsbyjs/gatsby) uses it
-to display a list of generated pages, while still displaying a live progress bar.
-
-```jsx
-import React, {useState, useEffect} from 'react';
-import {render, Static, Box, Text} from 'ink';
-
-const Example = () => {
-	const [tests, setTests] = useState([]);
-
-	useEffect(() => {
-		let completedTests = 0;
-		let timer;
-
-		const run = () => {
-			// Fake 10 completed tests
-			if (completedTests++ < 10) {
-				setTests(previousTests => [
-					...previousTests,
-					{
-						id: previousTests.length,
-						title: `Test #${previousTests.length + 1}`
-					}
-				]);
-
-				setTimeout(run, 100);
-			}
-		};
-
-		run();
-
-		return () => {
-			clearTimeout(timer);
-		};
-	}, []);
-
-	return (
-		<>
-			{/* This part will be rendered once to the terminal */}
-			<Static items={tests}>
-				{test => (
-					<Box key={test.id}>
-						<Text color="green">✔ {test.title}</Text>
-					</Box>
-				)}
-			</Static>
-
-			{/* This part keeps updating as state changes */}
-			<Box marginTop={1}>
-				<Text dimColor>Completed tests: {tests.length}</Text>
-			</Box>
-		</>
-	);
-};
-
-render(<Example />);
+```typescript
+const namespace = Container.namespace('test');
+namespace.remove();
 ```
 
-**Note:** `<Static>` only renders new items in `items` prop and ignores items
-that were previously rendered. This means that when you add new items to `items`
-array, changes you make to previous items will not trigger a rerender.
+It is not possible to remove the default namespace.
 
-See [examples/static](examples/static/static.js) for an example usage of `<Static>` component.
+An alias called ```'environment'``` is defined for the namespace method: 
 
-#### items
-
-Type: `Array`
-
-Array of items of any type to render using a function you pass as a component child.
-
-#### style
-
-Type: `object`
-
-Styles to apply to a container of child elements.
-See [`<Box>`](#box) for supported properties.
-
-```jsx
-<Static items={...} style={{padding: 1}}>
-	{...}
-</Static>
+```typescript
+Container.namespace('test');
+Container.environment('test'); // both commands are equivalents
 ```
 
-#### children(item)
+Take a look at [here](#using-namespaces) for more examples of namespaces usage.
 
-Type: `Function`
+### Creating temporary configurations
 
-Function that is called to render every item in `items` array.
-First argument is an item itself and second argument is index of that item in
-`items` array.
+You can use snapshot for testing or where you need to temporarily override a binding.
+```typescript
+describe('Test Service with Mocks', () => {
 
-Note that `key` must be assigned to the root component.
+    const snapshot: Snapshot;
+    before(function () {
+        // Store the IoC configuration
+        snapshot = Container.snapshot();
+        
+        // Change the IoC configuration to a mock service.
+        Container.bind(IService).to(MockService);
+    });
 
-```jsx
-<Static items={['a', 'b', 'c']}>
-	{(item, index) => {
-		// This function is called for every item in ['a', 'b', 'c']
-		// `item` is 'a', 'b', 'c'
-		// `index` is 0, 1, 2
-		return (
-			<Box key={index}>
-				<Text>Item: {item}</Text>
-			</Box>
-		);
-	}}
-</Static>
+    after(function () {
+        // Put the IoC configuration back for IService, so other tests can run.
+        snapshot.restore();
+    });
+
+    it('Should do a test', () => {
+        // Do some test
+    });
+});
 ```
 
-### `<Transform>`
+### Importing configurations from external file
 
-Transform a string representation of React components before they are written to output.
-For example, you might want to apply a [gradient to text](https://github.com/sindresorhus/ink-gradient), [add a clickable link](https://github.com/sindresorhus/ink-link) or [create some text effects](https://github.com/sindresorhus/ink-big-text).
-These use cases can't accept React nodes as input, they are expecting a string.
-That's what `<Transform>` component does, it gives you an output string of its child components and lets you transform it in any way.
+You can put all manual container configurations in an external file and then use the '''Container.configure''' method to import them.
 
-**Note:** `<Transform>` must be applied only to `<Text>` children components and shouldn't change the dimensions of the output, otherwise layout will be incorrect.
+For example, you can create the ```ioc.config.ts``` file:
 
-```jsx
-import {render, Transform} from 'ink';
+```typescript
+import { MyType, MyTypeImpl, MyType2, MyType2Factory } from './my-types';
+import { Scope } from 'typescript-ioc';
+import * as yaml from 'js-yaml';
+import * as fs from 'fs';
 
-const Example = () => (
-	<Transform transform={output => output.toUpperCase()}>
-		<Text>Hello World</Text>
-	</Transform>
-);
+const config = yaml.safeLoad(fs.readFileSync('service-config.yml', 'utf8'));
 
-render(<Example />);
+export default [
+  { bind: MyType, to: MyTypeImpl },
+  { 
+    bind: MyType2, 
+    factory: MyType2Factory, 
+    withParams: [Date], 
+    scope: Scope.Singleton 
+  },
+  { bindName: 'config', to: config }
+];
+
 ```
 
-Since `transform` function converts all characters to upper case, final output that's rendered to the terminal will be "HELLO WORLD", not "Hello World".
+And then import the configurations using:
 
-#### transform(children)
+```typescript
+import { Container } from "typescript-ioc";
+import config from './ioc.config';
 
-Type: `Function`
-
-Function which transforms children output.
-It accepts children and must return transformed children too.
-
-##### children
-
-Type: `string`
-
-Output of child components.
-
-## Hooks
-
-### useInput(inputHandler, options?)
-
-This hook is used for handling user input.
-It's a more convenient alternative to using `useStdin` and listening to `data` events.
-The callback you pass to `useInput` is called for each character when user enters any input.
-However, if user pastes text and it's more than one character, the callback will be called only once and the whole string will be passed as `input`.
-You can find a full example of using `useInput` at [examples/use-input](examples/use-input/use-input.js).
-
-```jsx
-import {useInput} from 'ink';
-
-const UserInput = () => {
-	useInput((input, key) => {
-		if (input === 'q') {
-			// Exit program
-		}
-
-		if (key.leftArrow) {
-			// Left arrow key pressed
-		}
-	});
-
-	return …
-};
+Container.configure(config);
 ```
 
-#### inputHandler(input, key)
+You need to load the configurations only once, but before you try to use the objects that depends on these files.
 
-Type: `Function`
+You can create configurations for specific namespaces, like:
 
-The handler function that you pass to `useInput` receives two arguments:
+```typescript
+import { MyRepository, MyTestRepository } from './my-types';
+import * as yaml from 'js-yaml';
+import * as fs from 'fs';
 
-##### input
+const config = yaml.safeLoad(fs.readFileSync('service.config.yml', 'utf8'));
+const configTest = yaml.safeLoad(fs.readFileSync('service.config-test.yml', 'utf8'));
+const configProd = yaml.safeLoad(fs.readFileSync('service.config-prod.yml', 'utf8'));
 
-Type: `string`
-
-The input that the program received.
-
-##### key
-
-Type: `object`
-
-Handy information about a key that was pressed.
-
-###### key.leftArrow
-
-###### key.rightArrow
-
-###### key.upArrow
-
-###### key.downArrow
-
-Type: `boolean`\
-Default: `false`
-
-If an arrow key was pressed, the corresponding property will be `true`.
-For example, if user presses left arrow key, `key.leftArrow` equals `true`.
-
-###### key.return
-
-Type: `boolean`\
-Default: `false`
-
-Return (Enter) key was pressed.
-
-###### key.escape
-
-Type: `boolean`\
-Default: `false`
-
-Escape key was pressed.
-
-###### key.ctrl
-
-Type: `boolean`\
-Default: `false`
-
-Ctrl key was pressed.
-
-###### key.shift
-
-Type: `boolean`\
-Default: `false`
-
-Shift key was pressed.
-
-###### key.tab
-
-Type: `boolean`\
-Default: `false`
-
-Tab key was pressed.
-
-###### key.backspace
-
-Type: `boolean`\
-Default: `false`
-
-Backspace key was pressed.
-
-###### key.delete
-
-Type: `boolean`\
-Default: `false`
-
-Delete key was pressed.
-
-###### key.pageDown
-
-###### key.pageUp
-
-Type: `boolean`\
-Default: `false`
-
-If Page Up or Page Down key was pressed, the corresponding property will be `true`.
-For example, if user presses Page Down, `key.pageDown` equals `true`.
-
-###### key.meta
-
-Type: `boolean`\
-Default: `false`
-
-[Meta key](https://en.wikipedia.org/wiki/Meta_key) was pressed.
-
-#### options
-
-Type: `object`
-
-##### isActive
-
-Type: `boolean`\
-Default: `true`
-
-Enable or disable capturing of user input.
-Useful when there are multiple `useInput` hooks used at once to avoid handling the same input several times.
-
-### useApp()
-
-`useApp` is a React hook, which exposes a method to manually exit the app (unmount).
-
-#### exit(error?)
-
-Type: `Function`
-
-Exit (unmount) the whole Ink app.
-
-##### error
-
-Type: `Error`
-
-Optional error. If passed, [`waitUntilExit`](waituntilexit) will reject with that error.
-
-```js
-import {useApp} from 'ink';
-
-const Example = () => {
-	const {exit} = useApp();
-
-	// Exit the app after 5 seconds
-	useEffect(() => {
-		setTimeout(() => {
-			exit();
-		}, 5000);
-	}, []);
-
-	return …
-};
+export default [
+  { bindName: 'config', to: config },
+  { namespace: {
+      test: [
+        { bindName: 'config', to: configTest },
+        { bind: MyRepository, to: MyTestRepository },
+      ],
+      production: [
+        { bindName: 'config', to: configProd }
+      ]
+    }
+  }
+];
 ```
 
-### useStdin()
+## A note about classes and interfaces
 
-`useStdin` is a React hook, which exposes stdin stream.
+Typescript interfaces only exist at development time, to ensure type checking. When compiled, they do not generate runtime code.
+This ensures good performance, but also means that is not possible to use interfaces as the type of a property being injected. There is no runtime information that could allow any reflection on interface type. Take a look at https://github.com/Microsoft/TypeScript/issues/3628 for more information about this.
 
-#### stdin
+So, this is not supported:
 
-Type: `stream.Readable`\
-Default: `process.stdin`
+```typescript
+interface PersonDAO {
+  get(id: string): Person;
+}
 
-Stdin stream passed to `render()` in `options.stdin` or `process.stdin` by default.
-Useful if your app needs to handle user input.
+class ProgrammerDAO implements PersonDAO {
+  @Inject
+  private programmerRestProxy: PersonRestProxy;
 
-```js
-import {useStdin} from 'ink';
+  get(id: string): Person
+  {
+      // get the person and return it...
+  }
+}
 
-const Example = () => {
-	const {stdin} = useStdin();
+Container.bind(PersonDAO).to(ProgrammerDAO); // NOT SUPPORTED
 
-	return …
-};
+class PersonService {
+  @Inject // NOT SUPPORTED
+  private personDAO: PersonDAO;
+}
+```
+However there is no reason for panic. Typescript classes are much more than classes. It could have the same behavior that interfaces on other languages.
+
+So it is possible to define an abstract class and then implement it as we do with interfaces:
+
+```typescript
+abstract class PersonDAO {
+  abstract get(id: string): Person;
+}
+
+class ProgrammerDAO implements PersonDAO {
+  @Inject
+  private programmerRestProxy: PersonRestProxy;
+
+  get(id: string): Person
+  {
+      // get the person and return it...
+  }
+}
+
+Container.bind(PersonDAO).to(ProgrammerDAO); // It works
+
+class PersonService {
+  @Inject // It works
+  private personDAO: PersonDAO;
+}
 ```
 
-#### isRawModeSupported
-
-Type: `boolean`
-
-A boolean flag determining if the current `stdin` supports `setRawMode`.
-A component using `setRawMode` might want to use `isRawModeSupported` to nicely fall back in environments where raw mode is not supported.
-
-```jsx
-import {useStdin} from 'ink';
-
-const Example = () => {
-	const {isRawModeSupported} = useStdin();
-
-	return isRawModeSupported ? (
-		<MyInputComponent />
-	) : (
-		<MyComponentThatDoesntUseInput />
-	);
-};
-```
-
-#### setRawMode(isRawModeEnabled)
-
-Type: `function`
-
-##### isRawModeEnabled
-
-Type: `boolean`
-
-See [`setRawMode`](https://nodejs.org/api/tty.html#tty_readstream_setrawmode_mode).
-Ink exposes this function to be able to handle <kbd>Ctrl</kbd>+<kbd>C</kbd>, that's why you should use Ink's `setRawMode` instead of `process.stdin.setRawMode`.
-
-**Warning:** This function will throw unless the current `stdin` supports `setRawMode`. Use [`isRawModeSupported`](#israwmodesupported) to detect `setRawMode` support.
-
-```js
-import {useStdin} from 'ink';
-
-const Example = () => {
-	const {setRawMode} = useStdin();
-
-	useEffect(() => {
-		setRawMode(true);
-
-		return () => {
-			setRawMode(false);
-		};
-	});
-
-	return …
-};
-```
-
-### useStdout()
-
-`useStdout` is a React hook, which exposes stdout stream, where Ink renders your app.
-
-#### stdout
-
-Type: `stream.Writable`\
-Default: `process.stdout`
-
-```js
-import {useStdout} from 'ink';
-
-const Example = () => {
-	const {stdout} = useStdout;
-
-	return …
-};
-```
-
-#### write(data)
-
-Write any string to stdout, while preserving Ink's output.
-It's useful when you want to display some external information outside of Ink's rendering and ensure there's no conflict between the two.
-It's similar to `<Static>`, except it can't accept components, it only works with strings.
-
-##### data
-
-Type: `string`
-
-Data to write to stdout.
-
-```js
-import {useStdout} from 'ink';
-
-const Example = () => {
-	const {write} = useStdout();
-
-	useEffect(() => {
-		// Write a single message to stdout, above Ink's output
-		write('Hello from Ink to stdout\n');
-	}, []);
-
-	return …
-};
-```
-
-See additional usage example in [examples/use-stdout](examples/use-stdout/use-stdout.js).
-
-### useStderr()
-
-`useStderr` is a React hook, which exposes stderr stream.
-
-#### stderr
-
-Type: `stream.Writable`\
-Default: `process.stderr`
-
-Stderr stream.
-
-```js
-import {useStderr} from 'ink';
-
-const Example = () => {
-	const {stderr} = useStderr();
-
-	return …
-};
-```
-
-#### write(data)
-
-Write any string to stderr, while preserving Ink's output.
-
-It's useful when you want to display some external information outside of Ink's rendering and ensure there's no conflict between the two.
-It's similar to `<Static>`, except it can't accept components, it only works with strings.
-
-##### data
-
-Type: `string`
-
-Data to write to stderr.
-
-```js
-import {useStderr} from 'ink';
-
-const Example = () => {
-	const {write} = useStderr();
-
-	useEffect(() => {
-		// Write a single message to stderr, above Ink's output
-		write('Hello from Ink to stderr\n');
-	}, []);
-
-	return …
-};
-```
-
-### useFocus(options?)
-
-Component that uses `useFocus` hook becomes "focusable" to Ink, so when user presses <kbd>Tab</kbd>, Ink will switch focus to this component.
-If there are multiple components that execute `useFocus` hook, focus will be given to them in the order that these components are rendered in.
-This hook returns an object with `isFocused` boolean property, which determines if this component is focused or not.
-
-#### options
-
-##### autoFocus
-
-Type: `boolean`\
-Default: `false`
-
-Auto focus this component, if there's no active (focused) component right now.
-
-##### isActive
-
-Type: `boolean`\
-Default: `true`
-
-Enable or disable this component's focus, while still maintaining its position in the list of focusable components.
-This is useful for inputs that are temporarily disabled.
-
-```jsx
-import {render, useFocus, Text} from 'ink';
-
-const Example = () => {
-	const {isFocused} = useFocus();
-
-	return <Text>{isFocused ? 'I am focused' : 'I am not focused'}</Text>;
-};
-
-render(<Example />);
-```
-
-See example in [examples/use-focus](examples/use-focus/use-focus.js).
-
-### useFocusManager()
-
-This hook exposes methods to enable or disable focus management for all components or manually switch focus to next or previous components.
-
-#### enableFocus()
-
-Enable focus management for all components.
-
-**Note:** You don't need to call this method manually, unless you've disabled focus management. Focus management is enabled by default.
-
-```js
-import {useFocusManager} from 'ink';
-
-const Example = () => {
-	const {enableFocus} = useFocusManager();
-
-	useEffect(() => {
-		enableFocus();
-	}, []);
-
-	return …
-};
-```
-
-#### disableFocus()
-
-Disable focus management for all components.
-Currently active component (if there's one) will lose its focus.
-
-```js
-import {useFocusManager} from 'ink';
-
-const Example = () => {
-	const {disableFocus} = useFocusManager();
-
-	useEffect(() => {
-		disableFocus();
-	}, []);
-
-	return …
-};
-```
-
-#### focusNext()
-
-Switch focus to the next focusable component.
-If there's no active component right now, focus will be given to the first focusable component.
-If active component is the last in the list of focusable components, focus will be switched to the first component.
-
-**Note:** Ink calls this method when user presses <kbd>Tab</kbd>.
-
-```js
-import {useFocusManager} from 'ink';
-
-const Example = () => {
-	const {focusNext} = useFocusManager();
-
-	useEffect(() => {
-		focusNext();
-	}, []);
-
-	return …
-};
-```
-
-#### focusPrevious()
-
-Switch focus to the previous focusable component.
-If there's no active component right now, focus will be given to the first focusable component.
-If active component is the first in the list of focusable components, focus will be switched to the last component.
-
-**Note:** Ink calls this method when user presses <kbd>Shift</kbd>+<kbd>Tab</kbd>.
-
-```js
-import {useFocusManager} from 'ink';
-
-const Example = () => {
-	const {focusPrevious} = useFocusManager();
-
-	useEffect(() => {
-		focusPrevious();
-	}, []);
-
-	return …
-};
-```
-
-## API
-
-#### render(tree, options?)
-
-Returns: [`Instance`](#instance)
-
-Mount a component and render the output.
-
-##### tree
-
-Type: `ReactElement`
-
-##### options
-
-Type: `object`
-
-###### stdout
-
-Type: `stream.Writable`\
-Default: `process.stdout`
-
-Output stream where app will be rendered.
-
-###### stdin
-
-Type: `stream.Readable`\
-Default: `process.stdin`
-
-Input stream where app will listen for input.
-
-###### exitOnCtrlC
-
-Type: `boolean`\
-Default: `true`
-
-Configure whether Ink should listen to Ctrl+C keyboard input and exit the app.
-This is needed in case `process.stdin` is in [raw mode](https://nodejs.org/api/tty.html#tty_readstream_setrawmode_mode), because then Ctrl+C is ignored by default and process is expected to handle it manually.
-
-###### patchConsole
-
-Type: `boolean`\
-Default: `true`
-
-Patch console methods to ensure console output doesn't mix with Ink output.
-When any of `console.*` methods are called (like `console.log()`), Ink intercepts their output, clears main output, renders output from the console method and then rerenders main output again.
-That way both are visible and are not overlapping each other.
-
-This functionality is powered by [patch-console](https://github.com/vadimdemedes/patch-console), so if you need to disable Ink's interception of output but want to build something custom, you can use it.
-
-###### debug
-
-Type: `boolean`\
-Default: `false`
-
-If `true`, each update will be rendered as a separate output, without replacing the previous one.
-
-#### Instance
-
-This is the object that `render()` returns.
-
-##### rerender(tree)
-
-Replace previous root node with a new one or update props of the current root node.
-
-###### tree
-
-Type: `ReactElement`
-
-```jsx
-// Update props of the root node
-const {rerender} = render(<Counter count={1} />);
-rerender(<Counter count={2} />);
-
-// Replace root node
-const {rerender} = render(<OldCounter />);
-rerender(<NewCounter />);
-```
-
-##### unmount()
-
-Manually unmount the whole Ink app.
-
-```jsx
-const {unmount} = render(<MyApp />);
-unmount();
-```
-
-##### waitUntilExit()
-
-Returns a promise, which resolves when app is unmounted.
-
-```jsx
-const {unmount, waitUntilExit} = render(<MyApp />);
-
-setTimeout(unmount, 1000);
-
-await waitUntilExit(); // resolves after `unmount()` is called
-```
-
-##### clear()
-
-Clear output.
-
-```jsx
-const {clear} = render(<MyApp />);
-clear();
-```
-
-#### measureElement(ref)
-
-Measure the dimensions of a particular `<Box>` element.
-It returns an object with `width` and `height` properties.
-This function is useful when your component needs to know the amount of available space it has. You could use it when you need to change the layout based on the length of its content.
-
-**Note:** `measureElement()` returns correct results only after the initial render, when layout has been calculated. Until then, `width` and `height` equal to zero. It's recommended to call `measureElement()` in a `useEffect` hook, which fires after the component has rendered.
-
-##### ref
-
-Type: `MutableRef`
-
-A reference to a `<Box>` element captured with a `ref` property.
-See [Refs](https://reactjs.org/docs/refs-and-the-dom.html) for more information on how to capture references.
-
-```jsx
-import {render, measureElement, Box, Text} from 'ink';
-
-const Example = () => {
-	const ref = useRef();
-
-	useEffect(() => {
-		const {width, height} = measureElement(ref.current);
-		// width = 100, height = 1
-	}, []);
-
-	return (
-		<Box width={100}>
-			<Box ref={ref}>
-				<Text>This box will stretch to 100 width</Text>
-			</Box>
-		</Box>
-	);
-};
-
-render(<Example />);
-```
-
-## Testing
-
-Ink components are simple to test with [ink-testing-library](https://github.com/vadimdemedes/ink-testing-library).
-Here's a simple example that checks how component is rendered:
-
-```jsx
-import React from 'react';
-import {Text} from 'ink';
-import {render} from 'ink-testing-library';
-
-const Test = () => <Text>Hello World</Text>;
-const {lastFrame} = render(<Test />);
-
-lastFrame() === 'Hello World'; //=> true
-```
-
-Check out [ink-testing-library](https://github.com/vadimdemedes/ink-testing-library) for more examples and full documentation.
-
-## Using React Devtools
-
-![](media/devtools.jpg)
-
-Ink supports [React Devtools](https://github.com/facebook/react/tree/master/packages/react-devtools) out-of-the-box.
-To enable integration with React Devtools in your Ink-based CLI, run it with `DEV=true` environment variable:
-
-```
-$ DEV=true my-cli
-```
-
-Then, start React Devtools itself:
-
-```
-$ npx react-devtools
-```
-
-After it starts up, you should see the component tree of your CLI.
-You can even inspect and change the props of components, and see the results immediatelly in the CLI, without restarting it.
-
-**Note**: You must manually quit your CLI via <kbd>Ctrl</kbd>+<kbd>C</kbd> after you're done testing.
-
-## Useful Components
-
-- [ink-text-input](https://github.com/vadimdemedes/ink-text-input) - Text input.
-- [ink-spinner](https://github.com/vadimdemedes/ink-spinner) - Spinner.
-- [ink-select-input](https://github.com/vadimdemedes/ink-select-input) - Select (dropdown) input.
-- [ink-link](https://github.com/sindresorhus/ink-link) - Link component.
-- [ink-gradient](https://github.com/sindresorhus/ink-gradient) - Gradient color component.
-- [ink-big-text](https://github.com/sindresorhus/ink-big-text) - Awesome text component.
-- [ink-image](https://github.com/kevva/ink-image) - Display images inside the terminal.
-- [ink-tab](https://github.com/jdeniau/ink-tab) - Tab component.
-- [ink-color-pipe](https://github.com/LitoMore/ink-color-pipe) - Create color text with simpler style strings in Ink.
-- [ink-multi-select](https://github.com/karaggeorge/ink-multi-select) - Select one or more values from a list
-- [ink-divider](https://github.com/JureSotosek/ink-divider) - A divider component.
-- [ink-progress-bar](https://github.com/brigand/ink-progress-bar) - Configurable component for rendering progress bars.
-- [ink-table](https://github.com/maticzav/ink-table) - Table component.
-- [ink-ascii](https://github.com/hexrcs/ink-ascii) - Awesome text component with more font choices, based on Figlet.
-- [ink-markdown](https://github.com/cameronhunter/ink-markdown) - Render syntax highlighted Markdown.
-- [ink-quicksearch-input](https://github.com/Eximchain/ink-quicksearch-input) - Select component with fast quicksearch-like navigation.
-- [ink-confirm-input](https://github.com/kevva/ink-confirm-input) - Yes/No confirmation input.
-- [ink-syntax-highlight](https://github.com/vsashyn/ink-syntax-highlight) - Code syntax highlighting.
-- [ink-form](https://github.com/lukasbach/ink-form) - Form component.
-
-## Useful Hooks
-
-- [ink-use-stdout-dimensions](https://github.com/cameronhunter/ink-monorepo/tree/master/packages/ink-use-stdout-dimensions) - Subscribe to stdout dimensions.
+The abstract class in this example has exactly the same semantic that the typescript interface on the previous example. The only difference is that it generates type information into the runtime code, making possible to implement some reflection on it.
 
 ## Examples
 
-- [Jest](examples/jest/jest.js) - Implementation of basic Jest UI [(live demo)](https://ink-jest-demo.vadimdemedes.repl.run/).
-- [Counter](examples/counter/counter.js) - Simple counter that increments every 100ms [(live demo)](https://ink-counter-demo.vadimdemedes.repl.run/).
-- [Form with Validation](https://github.com/final-form/rff-cli-example) - Manage form state using [Final Form](https://github.com/final-form/final-form#-final-form).
-- [Borders](examples/borders/borders.js) - Add borders to `<Box>` component.
-- [Suspense](examples/suspense/suspense.js) - Use React Suspense.
-- [Table](examples/table/table.js) - Render a table with multiple columns and rows.
-- [Focus Management](examples/use-focus/use-focus.js) - Use `useFocus` hook to manage focus between components.
-- [User Input](examples/use-input/use-input.js) - Listen to user input.
-- [Write to stdout](examples/use-stdout/use-stdout.js) - Write to stdout bypassing main Ink output.
-- [Write to stderr](examples/use-stderr/use-stderr.js) - Write to stderr bypassing main Ink output.
-- [Static](examples/static/static.js) - Use `<Static>` to render permanent output.
-- [Child process](examples/subprocess-output) - Render output from a child process.
+### Using Container for testing
 
-## Maintainers
+Some examples of using the container for tests:
 
-- [Vadim Demedes](https://github.com/vadimdemedes)
-- [Sindre Sorhus](https://github.com/sindresorhus)
+```typescript
+describe('My Test', () => {
+    let myService: MyService;
+    beforeAll(() => {
+        class MockRepository implements AuthenticationRepository {
+          async getAccessToken() {
+            return 'my test token';
+          }
+        }
+        Container.bind(AuthenticationRepository).to(MockRepository)
+        myService = Container.get(MyService);
+    });
+    //...
+});
+```
+or you can configure all your mocks togheter in a mocks.config.ts
+
+```typescript
+class MockRepository implements AuthenticationRepository {
+  async getAccessToken() {
+    return 'my test token';
+  }
+}
+
+class OtherMockRepository implements OtherRepository {
+  async doSomething() {
+    return 'done';
+  }
+}
+
+export default [
+  { bind: AuthenticationRepository, to: MockRepository },
+  { bind: OtherRepository, to: OtherMockRepository }
+];
+```
+
+and then in your test files:
+
+```typescript
+import mocksConfig from './mocks.config.ts';
+
+describe('My Test', () => {
+    let myService: MyService;
+    beforeAll(() => {
+        Container.config(mocksConfig);
+        myService = Container.get(MyService);
+    });
+    //...
+});
+```
+or if you want to use the configurations and restore the container after the test:
+
+```typescript
+import mocksConfig from './mocks.config.ts';
+
+describe('My Test', () => {
+    let myService: MyService;
+    let snaphot: Snaphot;
+    beforeAll(() => {
+        snapshot = Container.snapshot();
+        Container.config(mocksConfig);
+        myService = Container.get(MyService);
+    });
+
+    afterAll(() => {
+        snapshot.restore();
+    });
+
+    //...
+});
+```
+
+### Using Namespaces
+
+Define configurations on a file, like ```ioc.config.ts```:
+
+```typescript
+import { MyRepository, MyTestRepository } from './my-types';
+import * as yaml from 'js-yaml';
+import * as fs from 'fs';
+
+const config = yaml.safeLoad(fs.readFileSync('service.config.yml', 'utf8'));
+const configTest = yaml.safeLoad(fs.readFileSync('service.config-test.yml', 'utf8'));
+const configProd = yaml.safeLoad(fs.readFileSync('service.config-prod.yml', 'utf8'));
+
+export default [
+  { bindName: 'config', to: config },
+  { env: {
+      test: [
+        { bindName: 'config', to: configTest },
+        { bind: MyRepository, to: MyTestRepository },
+      ],
+      production: [
+        { bindName: 'config', to: configProd }
+      ]
+    }
+  }
+];
+```
+And then import the configurations using:
+
+```typescript
+import { Container } from "typescript-ioc";
+import config from './ioc.config';
+
+Container.configure(config);
+// Then activate the environment calling the container 
+Container.environment(process.env.NODE_ENV);
+```
+
+## Browser usage
+
+It was tested with browserify and webpack, but it should work with any other similar tool.
+
+Starting from version 2, this library only works in browsers that supports javascript ES6 '''class'''. If you need to support old ES5 browsers, please use the version 1.2.6 of this library
+
+## Restrictions
+- Circular injections are not supported
+
+## Migrating from previous version
+
+Some breaking changes:
+
+#### ES6 suport 
+
+This library does not support old ES5 code anymore. So, you need to change the target compilation of your code to ```es6``` (or anything else newer, like es2016, es2020, esnext etc)
+
+Your ```tsconfig.json``` needs to include at least:
+ ```json
+{
+    "compilerOptions": {
+        "experimentalDecorators": true,
+        "emitDecoratorMetadata": true,
+        "target": "es6"
+    }
+}
+ ```
+
+This decision was taken to help to solve a lot of bugs with react native and browser environments.
+
+If you need to support es5 code, you can keep using the 1.2.6 version
+
+#### @AutoWired renamed
+
+A lot of confusion with ```@AutoWired``` motivated us to rename it to ```@OnlyInstantiableByContainer```. It is a big name, but it says exactly what that decorator does. It is completely optional (The container will always work in the same way when instrumenting the types), but it transforms the decorated constructor to avoid that anybody create new instances calling direct a new expression.
+
+So you need to change all references to ```@AutoWired``` to ```@OnlyInstantiableByContainer```.
+
+#### @Provided @Provides and Provider interface removed
+
+We changed the name of the interface ```Provider``` to ```ObjectFactory``` and also change the definition of this type to be a simple function signature.
+
+So, now we have:
+
+```typescript
+// previous version
+const provider = {
+  get: () => new MyType()
+};
+
+// new version
+const factory = () => new MyType();
+```
+
+Following the same design, whe renamed the ```@Provided```decorator to ```@Factory```. 
+
+```typescript
+// previous version
+@Provided({
+  get: () => new MyType()
+})
+class MyType {
+}
+
+// new version
+@Factory(() => new MyType())
+class MyType {
+}
+```
+
+The ```@Provides``` decorator was removed because it could cause a lot of problems, once it was used in the class that would provide an implementation, that usually was always defined in different files. That forced us to had things like ```ContainerConfig.addSource()``` to scan folders for files. It caused problems in react native, in browser and in some environments like lambda functions.
+
+We redesigned a new way to load container configurations that does not need to scan folders anymore, removing the problems and improving the performance. Take a look at [```Container.configure``` method](#importing-configurations-from-external-file) for a better option for the old ```@Provides```.
+
+#### Container.snapshot refactored
+
+We had a minor change in the Snapshot handling. We don't have anymore the public method ```Container.restore(type)```. A safer way to work with snapshots was implemented. Now the ```Container.snapshot``` method returns a snapshot object. That object has a ```restore()``` method.
+
+The new way:
+
+```typescript
+const snapshot = Container.snapshot();
+snapshot.restore();
+```
+
+>>>>>>> SonjayaJetBrain-patch-1

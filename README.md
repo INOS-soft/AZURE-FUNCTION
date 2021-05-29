@@ -1722,6 +1722,15 @@ Then, start React Devtools itself:
 ```
 $ npx react-devtools
 ```
+// it will override any annotation configuration
+Container.bind(PersonDAO).to(ProgrammerDAO).scope(Scope.Local); 
+
+// that will make any injection to Date to return 
+// the same instance, created when the first call is executed.
+Container.bind(Date).to(Date).scope(Scope.Singleton); 
+
+// it will ask the IoC Container to retrieve the instance.
+let personDAO = Container.get(PersonDAO); 
 
 After it starts up, you should see the component tree of your CLI.
 You can even inspect and change the props of components, and see the results immediatelly in the CLI, without restarting it.

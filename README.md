@@ -1,25 +1,21 @@
-# Super-Ghcz-master
-[SonjayaJetBrain/legendary-memory-octo-garbango-guanzo]
-[import React, {useState, useEffect} from 'react';
-import {render, Text} from 'ink';
+<!--
+title: Google Cloud Functions Serverless Events
+menuText: Events
+layout: Doc
+-->
 
-const Counter = () => {
-	const [counter, setCounter] = useState(0);
+<!-- DOCS-SITE-LINK:START automatically generated  -->
 
-	useEffect(() => {
-		const timer = setInterval(() => {
-			setCounter(previousCounter => previousCounter + 1);
-		}, 100);
+### [Read this on the main serverless docs site](https://www.serverless.com/framework/docs/providers/google/events/)
 
-		return () => {
-			clearInterval(timer);
-		};
-	}, []);
+<!-- DOCS-SITE-LINK:END -->
 
-	return <Text color="green">{counter} tests passed</Text>;
-};
+# Serverless Google Cloud Functions Events
 
-render(<Counter />);
-]
- > Rscript analysis.R
-} Rscript Analysis.Py
+Welcome to the Serverless Google Cloud Functions Events Glossary!
+
+Please select a section on the left to get started.
+
+If you have questions, join the [chat in gitter](https://gitter.im/serverless/serverless) or [post over on the forums](http://forum.serverless.com/)
+
+**Note:** Before continuing [Google Cloud system credentials](../guide/credentials.md) are required for using the CLI.

@@ -1,0 +1,165 @@
+{
+  "data": [
+    {
+      "version": 3,
+      "aid": "ace200be02",
+      "bid": "200902",
+      "cls": "acer.oobe.dbx.7",
+      "channel": "Hermes",
+      "market": {
+        "incl": [
+          "US",
+          "CA",
+          "1L",
+          "FR",
+          "DE",
+          "GB",
+          "1N",
+          "RU",
+          "1E",
+          "AU",
+          "JP",
+          "KR",
+          "1A",
+          "TW"
+        ],
+        "excl": [
+          "CN",
+          "CU",
+          "IR",
+          "KP",
+          "SD",
+          "SY"
+        ]
+      },
+      "label": {
+        "incl": [],
+        "excl": []
+      },
+      "priority": 2,
+      "embargo": 0,
+      "arrival": 0,
+      "sampling": "0,100",
+      "analytics": "UA-119336999-5",
+      "retention": "UA-119336999-5"
+    },
+    {
+      "version": 3,
+      "aid": "1000030302",
+      "bid": "200317",
+      "cls": "0",
+      "channel": "Hermes",
+      "market": {
+        "incl": [
+          "US",
+          "CA",
+          "1L",
+          "FR",
+          "DE",
+          "GB",
+          "1N",
+          "RU",
+          "1E",
+          "AU",
+          "JP",
+          "KR",
+          "1A",
+          "CN",
+          "TW"
+        ],
+        "excl": []
+      },
+      "label": {
+        "incl": [],
+        "excl": []
+      },
+      "priority": 9,
+      "embargo": 0,
+      "arrival": 0,
+      "sampling": "0,100",
+      "analytics": "UA-126885018-3",
+      "retention": "UA-126885018-3"
+    },
+    {
+      "version": 3,
+      "aid": "9072a57c01",
+      "bid": "191120",
+      "cls": "acer.universal.6",
+      "channel": "GoTrust",
+      "market": {
+        "incl": [
+          "US",
+          "CA",
+          "1L",
+          "FR",
+          "DE",
+          "GB",
+          "1N",
+          "RU",
+          "1E",
+          "AU",
+          "JP",
+          "KR",
+          "1A",
+          "CN",
+          "TW"
+        ],
+        "excl": []
+      },
+      "label": {
+        "incl": [],
+        "excl": [
+          "S001"
+        ]
+      },
+      "priority": 5,
+      "embargo": 168,
+      "arrival": 0,
+      "sampling": "0,100",
+      "analytics": "UA-101952962-32",
+      "retention": "UA-101952962-38"
+    },
+    {
+      "version": 3,
+      "aid": "ec94e55901",
+      "bid": "200203",
+      "cls": "acer.universal.6",
+      "channel": "ExpressVPN",
+      "market": {
+        "incl": [
+          "US",
+          "CA",
+          "DE",
+          "RU",
+          "AU",
+          "JP",
+          "KR",
+          "1A",
+          "1L",
+          "FR",
+          "GB",
+          "1N",
+          "1E"
+        ],
+        "excl": []
+      },
+      "label": {
+        "incl": [],
+        "excl": [
+          "S001",
+          "A007"
+        ]
+      },
+      "priority": 5,
+      "embargo": 336,
+      "arrival": 0,
+      "sampling": "0,100",
+      "analytics": "UA-146136564-19",
+      "retention": "UA-146136564-20"
+    }
+  ],
+  "ctrl": {
+    "error_code": "0",
+    "error_message": ""
+  }
+}

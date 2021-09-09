@@ -2,4 +2,4 @@
 
 Refer to [Serverless docs](https://serverless.com/framework/docs/providers/azure/guide/intro/) for more information.
 
-#LICENSE (c) MIT
+# LICENSE (c) MIT
